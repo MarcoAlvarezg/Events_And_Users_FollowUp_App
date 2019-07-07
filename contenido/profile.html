@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="shortcut icon" type="image/png" href="../images/Amb.png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>&#60;Teacher Advocates&#62;</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Favicons de intentet -->
+  <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="../imges/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="../imges/apple-touch-icon-114x114.png">
+
+  <!-- Animaciones Bootstrap -->
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="../fonts/font-awesome-4.7.0/css/font-awesome.css">
+
+  <!-- Estilos obtenidos de bootstrap-->
+  <link rel="stylesheet" type="text/css" href="../css/style.css">
+  <link rel="stylesheet" type="text/css" href="../css/prettyPhoto.css">
+  <!-- Funete de las letras-->
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700,900,300' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800,600,300' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+  <!-- Header -->
+  <header id="header">
+    <div class="intro text-center">
+      <div class="overlay">
+        <div class="container">
+          <div class="row">
+            <div class="intro-text">
+              <h1 id="nombreEmb">Bienvenido:</h1>
+              <p>&#60;@Name&#62;</p>
+              <a href="#portfolio" class="btn btn-default btn-lg page-scroll">Photo Gallery</a>
+            </div>
+            <!-- Seccion de perfil -->
+            <div id="about2">
+              <div class="container">
+                <h2>¿Quien soy yo?</h2>
+                <p>&#60;Teacher Advocates&#62;</p>
+                <hr>
+              </div>
+              <div class="section-title text-center center">
+                <div class="col-xs-12 col-md-6">
+                  <!--<img src="../images/Edgar.png" class="img-responsive" alt="Avatar">-->
+                </div>
+                <div class="col-xs-12 col-md-6">
+                  <div class="about-text">
+                    <p>Tecnologico de Monterrey <span id="universidad"></span></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </header>
+  <!-- Navegacion o header de la pagina -->
+  <div id="nav">
+    <nav class="navbar navbar-custom">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse"> <i class="fa fa-bars"></i> </button>
+        </div>
+
+        <!-- Animacion y movimineto del header -->
+        <div class="collapse navbar-collapse navbar-main-collapse">
+          <ul class="nav navbar-nav">
+            <!--Hacer mas chica letra para que aparesca el encabezado en 1 linea-->
+            <li class="hidden"> <a href="#page-top"></a> </li>
+            <li> <a class="page-scroll" href="#page-top">Inicio</a> </li>
+            <li> <a class="page-scroll" href="#page-top">Tu Perfil</a> </li>
+            <li> <a class="page-scroll" href="#skills">Horas y Registro</a> </li>
+            <li> <a class="page-scroll" href="#portfolio">Photo Gallery</a> </li>
+            <li> <a class="page-scroll" href="#achievements">Ranking </a></li>
+            <li> <a class="page-scroll" href="#testimonials">Live Feed</a> </li>
+            <li> <a class="page-scroll" href="#contact">Recursos</a> </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div id="skills" class="text-center">
+    <div class="container">
+      <div class="section-title center">
+        <h2>Horas de voluntariado</h2>
+        <hr>
+      </div>
+      <div class="row">
+        <div class="progress">
+          <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="83" aria-valuemin="0" aria-valuemax="100" style="width:35%">
+            0 hrs
+          </div>
+        </div>
+      </div>
+      <div class="section-title center">
+        <h2>Registro de Actividades</h2>
+        <hr>
+      </div>
+      <div class="col-md-8 col-md-offset-2">
+        <form name="sentMessage" id="contactForm" novalidate>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <select class="form-control" id="question1" required="required">
+                  <option>¿Qué hiciste?</option>
+                  <option>Plática</option>
+                  <option>Taller</option>
+                  <option>Evento al Publico</option>
+                  <option>Clase</option>
+                  <option>Diplomado</option>
+                  <option>Diplomado, seminario o similar</option>
+                  <option>Otros...</option>
+                </select>
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <input type="text" id="question2" class="form-control" placeholder="Especifica que otro">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <input type="text" id="question3" class="form-control" placeholder="¿En donde?">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <select class="form-control" id="question4" placeholder="¿Cuanto tiempo?">
+                  <option>¿Cuanto tiempo?</option>
+                  <option>1 hora</option>
+                  <option>2 horas</option>
+                  <option>3 horas</option>
+                  <option>4 horas</option>
+                  <option>5 horas</option>
+                  <option>6 horas</option>
+                  <option>7 horas</option>
+                  <option>8 horas</option>
+                </select>
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="custom-select">
+                <select class="form-control" id="question6" placeholder="Experiencia">
+                  <option>Experiencia</option>
+                  <option>Mala</option>
+                  <option>Regular</option>
+                  <option>Buena</option>
+                  <option>Muy Buena</option>
+                  <option>Excelente</option>
+                </select>
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <input type="text" id="question5" class="form-control" placeholder="¿Qué hay a futuro?">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <textarea name="message" id="message" class="form-control" rows="3" placeholder="Dinos quien te apoyo con su usuario de w3"></textarea>
+            <p class="help-block text-danger"></p>
+          </div>
+          <div class="form-group">
+            <textarea name="message" id="message" class="form-control" rows="3" placeholder="Comentarios adicionales que quieras compartir"></textarea>
+            <p class="help-block text-danger"></p>
+          </div>
+
+          <div id="success"></div>
+          <button onclick="myAlert()" type="submit" class="btn btn-default">Registrar Actividad</button>
+
+          <script>
+            function myAlert() {
+              alert("Activida registrada exitosamente!!!");
+            }
+          </script>
+        </form>
+        <!--Redes Sociales de la pagina de IBM-->
+      </div>
+    </div>
+  </div>
+  </div>
+  <!-- Portfolio de evidencias de los eventos  -->
+  
+  <!-- Seccion de Ranking -->
+  <div id="achievements" class="text-center">
+    <div class="container">
+      <div class="section-title center">
+        <h2><strong>Ranking<strong></h2>
+        <hr>
+        <p><strong>Numero de activiades realizadas<strong></p>
+      </div>
+      <div class="row">
+        <p>UNAM</p>
+        <div class="progress">
+          <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="83" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+            0 activiades
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <p>Tecnologico de Monterrey</p>
+        <div class="progress">
+          <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="83" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+            0 activiades
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <p>IPN</p>
+        <div class="progress">
+          <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="83" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+            0 activiades
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <p>Universida Autonoma Metropolitana</p>
+        <div class="progress">
+          <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="83" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+            0 activiades
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <p>Tecnologico de Monterrey</p>
+        <div class="progress">
+          <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="83" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+            0 activiades
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <p>ITAM</p>
+        <div class="progress">
+          <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="83" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+            0 activiades
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <p>UAEMex</p>
+        <div class="progress">
+          <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="83" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+            5 activiades
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <p>UDG</p>
+        <div class="progress">
+          <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="83" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+            75 activiades
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <p>Universida Autonoma de Nuevo Leon</p>
+        <div class="progress">
+          <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="83" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+            0 activiades
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <p>Universidad Anahuac</p>
+        <div class="progress">
+          <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="83" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+            0 activiades
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <p>Otras Universidades</p>
+        <div class="progress">
+          <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="83" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+            0 activiades
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <!-- Testimonials Section -->
+  <div id="testimonials" class="text-center">
+    <div class="container">
+      <div class="section-title center">
+        <h2>Live Feed</h2>
+        <hr>
+      </div>
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+          <div class="row testimonials">
+            <div class="col-sm-4">
+              <blockquote><i class="fa fa-quote-left"></i>
+                <p>
+                  <h3><strong>Si conoces de algún evento o quieres apoyar en alguna actividad, ¡Háznoslo saber aquí!</strong></h>
+                </p>
+      <div class="columns">
+          <h3 class="title is-3">
+            Mensajes de visitantes anteriores
+          </h3>
+          <div style="background : #000000;
+            color : #ffffff;
+            padding : 4px;
+            width : 900px;
+            height : 400px;
+            overflow : auto; ">
+          <div id="entries"></div>
+          </div>
+        <div class="column">
+          <h3 class="title is-3">
+            Agrega tu mensaje
+          </h3>
+          <form id="addEntry">
+            <div class="field">
+              <label class="label">Nombre</label>
+              <div class="control">
+                <input class="input" type="text" placeholder="your name" id="name">
+              </div>
+            </div>
+            <div class="field">
+<br>              <label class="label">Email</label>
+              <div class="control">
+                <input class="input" type="text" placeholder="your email" id="email">
+              </div>
+            </div>
+            <div class="field">
+<br>              <label class="label">Comentario</label>
+              <div class="control">
+                <textarea class="textarea" placeholder="your comment" id="comment"></textarea>
+              </div>
+            </div>
+            <div class="control">
+  <br>            <button class="button is-primary">Enviar mensaje</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script id="entries-template" type="text/x-handlebars-template">
+    {{#each entries}}
+    <div class="box">
+      <article class="media">
+        <div class="media-left">
+          <figure class="image is-64x64">
+            <img src="{{icon}}" alt="No Image">
+          </figure>
+        </div>
+        <div class="media-content">
+          <div class="content">
+            <p>
+              <strong>{{name}}</strong> <small>{{email}}</small>
+              <br> {{comment}}
+            </p>
+          </div>
+        </div>
+      </article>
+    </div>
+    {{/each}}
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="guestbook.js"></script>
+              <!-- <iframe WIDTH="600" HEIGHT="600" title="Serverless" src="https://2166d93d.us-east.apiconnect.appdomain.cloud/7fdb8107-a76d-4275-830d-019450118c56/teacherAdvocates/entries" frameborder="0" scrolling="auto"></iframe>-->
+                <!-- <iframe WIDTH="600" HEIGHT="600" title="Shoutbox" src="https://shoutbox.widget.me/start.html?uid=oa0ca282im" frameborder="0" scrolling="auto"></iframe> --><!-- script is optional -->
+               <!-- <script>
+                  document.getElementById("sbLinks").style.display = 'none';
+                </script> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Contact Section -->
+  <!--Necesito modificar la seccion de las imagens para que esten alineadas8-->
+  <div id="contact" class="text-center">
+    <div class="overlay">
+      <div class="container">
+        <div class="section-title center">
+          <h2>Recursos</h2>
+          <hr>
+        </div>
+        <div class="row">
+          <div class="portfolio-items">
+            <div class="col-sm-6 col-md-3 col-lg-3 web">
+              <div class="portfolio-item">
+                <div class="hover-bg">
+                  <a href="https://ibm.box.com/s/j8en6g2okpjk952q0lpe9itjw89uhaim" title="Project description" rel="prettyPhoto">
+                    <div class="hover-text">
+                      <h4>Watson</h4>
+                    </div>
+                    <img src="../images/categorias/IconWatson.png" class="img-responsive" alt="Project Title">
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-3 col-lg-3 app">
+              <div class="portfolio-item">
+                <div class="hover-bg">
+                  <a href="https://ibm.box.com/s/u4ui47vpookrejw5z7wt8ifakag3ygas" title="Project description" rel="prettyPhoto">
+                    <div class="hover-text">
+                      <h4>Data Science</h4>
+                    </div>
+                    <img src="../images/categorias/IconData.png" class="img-responsive" alt="Project Title">
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-3 col-lg-3 web">
+              <div class="portfolio-item">
+                <div class="hover-bg">
+                  <a href="https://ibm.box.com/s/mf9zhd4zyn3f4flkzc5innra6olysdpe" title="Project description" rel="prettyPhoto">
+                    <div class="hover-text">
+                      <h4>Cloud</h4>
+                    </div>
+                    <img src="../images/categorias/IconCloud.png" class="img-responsive" alt="Project Title">
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-3 col-lg-3 app">
+              <div class="portfolio-item">
+                <div class="hover-bg">
+                  <a href="https://ibm.box.com/s/q0mvuupz8y403008qkiz3qhdurp5erw8" title="Project description" rel="prettyPhoto">
+                    <div class="hover-text">
+                      <h4>Internet of Things</h4>
+                    </div>
+                    <img src="../images/categorias/IconIoT.png" class="img-responsive" alt="Project Title">
+                  </a>
+                </div>
+              </div>
+            </div>
+            </div>
+      </div>
+    </div>
+    <!-- Pie de pagina -->
+    <div id="footer">
+      <div class="container text-center">
+        <div class="fnav">
+          <p>Copyright &copy; 2018 Ambassador por <a href="https://www.ibm.com/mx-es/" rel="nofollow"> IBM México</a></p>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="../javascript/jquery.1.11.1.js"></script>
+    <script type="text/javascript" src="../javascript/bootstrap.js"></script>
+    <script type="text/javascript" src="../javascript/SmoothScroll.js"></script>
+    <script type="text/javascript" src="../javascript/easypiechart.js"></script>
+    <script type="text/javascript" src="../javascript/jquery.prettyPhoto.js"></script>
+    <script type="text/javascript" src="../javascript/jquery.isotope.js"></script>
+    <script type="text/javascript" src="../javascript/jquery.counterup.js"></script>
+    <script type="text/javascript" src="../javascript/waypoints.js"></script>
+    <script type="text/javascript" src="../javascript/jqBootstrapValidation.js"></script>
+    <!-- <script type="text/javascript" src="../javascript/contact_me.js"></script> -->
+    <!-- <script type="text/javascript" src="../javascript/main.js"></script> -->
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-database.js"></script>
+</body>
+
+</html>
