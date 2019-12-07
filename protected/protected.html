@@ -1,29 +1,29 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <link rel="shortcut icon" type="image/png" href="../protected/images/Amb.png">
+        <link rel="shortcut icon" type="image/png" href="./images/Amb.png">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>&#60;Teacher Advocates&#62;</title>
+        <title>&#60;Developer&#62;</title>
         <meta name="description" content="">
         <meta name="author" content="">
       
         <!-- Favicons de intentet -->
-        <link rel="apple-touch-icon" href="../protected/images/apple-touch-icon.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="../protected/imges/apple-touch-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="../protected/imges/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" href="./images/apple-touch-icon.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="./imges/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="./imges/apple-touch-icon-114x114.png">
       
         <!-- Animaciones Bootstrap -->
-        <link rel="stylesheet" type="text/css" href="../protected/css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="../fonts/font-awesome-4.7.0/css/font-awesome.css">
       
         <!-- Estilos obtenidos de bootstrap-->
-        <link rel="stylesheet" type="text/css" href="../protected/css/style.css">
-        <link rel="stylesheet" type="text/css" href="../protected/css/prettyPhoto.css">
+        <link rel="stylesheet" type="text/css" href="./css/style.css">
+        <link rel="stylesheet" type="text/css" href="./css/prettyPhoto.css">
         <!-- Funete de las letras-->
-        <link href='http://fonts.googleapis.com/css?family=Lato:400,700,900,300' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800,600,300' rel='stylesheet' type='text/css'>
-      
+        <link href='https://fonts.googleapis.com/css?family=Lato:400,700,900,300' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,800,600,300' rel='stylesheet' type='text/css'>
       </head>
       
       <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
@@ -41,11 +41,8 @@
                 <div class="row">
                   <div class="intro-text">
                     <h1 id="nombreEmb">Bienvenido:</h1>
-                    <p>&#60;Teacher advocate&#62;</p>
-                    <p><h2><span id="userNameSpan"></h2></span></p>
-                        <div class="about-text">
-                          <p> Institución: <span id="universidad"></span></p>
-                        </div>
+                    <p>&#60;Developer&#62;</p>
+                    <div data="user"><h2><p id="name"><span id="userName" ></span></p></h2></div>
                       </div>
                 </div>
               </div>
@@ -85,8 +82,8 @@
             </div>
             <div class="row">
               <div class="progress">
-                <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="83" aria-valuemin="0" aria-valuemax="100" style="width:35%">
-                  0 hrs
+                <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="83" aria-valuemin="0" aria-valuemax="100" style="width:90%">
+                 <span id="horasReg"></span> hrs
                 </div>
               </div>
             </div>
@@ -95,91 +92,86 @@
               <hr>
             </div>
             <div class="col-md-8 col-md-offset-2">
-              <form name="sentMessage" id="contactForm" novalidate>
+              <form name="addActivity" id="addActivity" method="POST">
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
-                      <select class="form-control" id="question1" required="required">
-                        <option>¿Qué hiciste?</option>
-                        <option>Plática</option>
-                        <option>Taller</option>
-                        <option>Evento al Publico</option>
-                        <option>Clase</option>
-                        <option>Diplomado</option>
-                        <option>Diplomado, seminario o similar</option>
-                        <option>Otros...</option>
+                      <input type="hidden" id="user" name="user" value="" />
+                      <div class="item-required">
+                      <select class="form-control" id="actType" nonvalidate>
+                        <option selected="true" disabled>Tipo de actividad</option>
+                        <option>Clase o Conferencia</option>
+                        <option>Taller o Workshop</option>
+                        <option>Bootcamp o Diplomado</option>
                       </select>
                       <p class="help-block text-danger"></p>
+                      </div>
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
-                      <input type="text" id="question2" class="form-control" placeholder="Especifica que otro">
+                      <div class="item-required">
+                      <input type="number" id="hours" class="form-control" min="0" max="100" placeholder="Cantidad de horas (sin minutos)" required>
+                      <p class="help-block text-danger"></p>
+                    </div></div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <input type="text" id="loc" class="form-control" placeholder="Ubicación del evento" required>
                       <p class="help-block text-danger"></p>
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
-                      <input type="text" id="question3" class="form-control" placeholder="¿En donde?">
+                      <input type="text" id="students" class="form-control" placeholder="Cantidad de alumnos participantes" required>
                       <p class="help-block text-danger"></p>
                     </div>
                   </div>
+                  <!---->
                   <div class="col-md-6">
                     <div class="form-group">
-                      <select class="form-control" id="question4" placeholder="¿Cuanto tiempo?">
-                        <option>¿Cuanto tiempo?</option>
-                        <option>1 hora</option>
-                        <option>2 horas</option>
-                        <option>3 horas</option>
-                        <option>4 horas</option>
-                        <option>5 horas</option>
-                        <option>6 horas</option>
-                        <option>7 horas</option>
-                        <option>8 horas</option>
+                        <div class="item-required">
+                      <select id="ins" class="form-control" required>
+
                       </select>
                       <p class="help-block text-danger"></p>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="custom-select">
-                      <select class="form-control" id="question6" placeholder="Experiencia">
-                        <option>Experiencia</option>
-                        <option>Mala</option>
-                        <option>Regular</option>
-                        <option>Buena</option>
-                        <option>Muy Buena</option>
-                        <option>Excelente</option>
-                      </select>
-                      <p class="help-block text-danger"></p>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <input type="text" id="question5" class="form-control" placeholder="¿Qué hay a futuro?">
-                      <p class="help-block text-danger"></p>
+                        </div>
                     </div>
                   </div>
                 </div>
                 <div class="form-group">
-                  <textarea name="message" id="message" class="form-control" rows="3" placeholder="Dinos quien te apoyo con su usuario de w3"></textarea>
+                  <textarea name="message" id="comment" class="form-control" rows="3" placeholder="Comentarios adicionales que quieras compartir" required></textarea>
                   <p class="help-block text-danger"></p>
                 </div>
-                <div class="form-group">
-                  <textarea name="message" id="message" class="form-control" rows="3" placeholder="Comentarios adicionales que quieras compartir"></textarea>
-                  <p class="help-block text-danger"></p>
+                    <div class="form-group">
+                        <div class="star-rating"> 
+                            <h5>Califica tu experiencia</h5>
+                            <div class="rating">
+                              <input type="radio" id="star5" name="rating" onclick="handleClick(this);" value="5" class="radio-1" />
+                              <label for="star5" class="star star-1" title="Excellent"></label>
+                              <input type="radio" id="star4" name="rating" onclick="handleClick(this);" value="4" class="radio-2" />
+                              <label for="star4" class="star star-2" title="Great"></label>
+                              <input type="radio" id="star3" name="rating" onclick="handleClick(this);" value="3" class="radio-3" />
+                              <label for="star3" class="star star-3" title="Average"></label>
+                              <input type="radio" id="star2" name="rating" onclick="handleClick(this);" value="2" class="radio-4" />
+                              <label for="star2" class="star star-4" title="Poor"></label>
+                              <input type="radio" id="star1" name="rating" onclick="handleClick(this);" value="1" class="radio-5" />
+                              <label for="star1" class="star star-5" title="Bad"></label>
+                          </div>         
+                          <input type="hidden" id="rat" name="rat" value="" />
+                      </div>
+                  </div>
+                  <br><br><br>
+                <div id="success" class="alert">
+                <button type="submit" class="btn btn-default">Registrar Actividad</button>
                 </div>
-      
-                <div id="success"></div>
-                <button onclick="myAlert()" type="submit" class="btn btn-default">Registrar Actividad</button>
-      
-                <script>
-                  function myAlert() {
-                    alert("Activida registrada exitosamente!!!");
-                  }
-                </script>
               </form>
               <!--Redes Sociales de la pagina de IBM-->
+              <div>
+                <a href="https://teachadv99.mybluemix.net/"><input type="button" class="btn-default" value="Cargar Fotos"></a>
+              </div>
             </div>
+            
           </div>
         </div>
         </div>
@@ -194,93 +186,65 @@
               <p><strong>Numero de actividades realizadas<strong></p>
             </div>
             <div class="row">
-              <p>UNAM</p>
-              <div class="progress">
-                <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="83" aria-valuemin="0" aria-valuemax="100" style="width:0%">
-                  0 activiades
+                <h2>
+                  <div class = "col-sm-3"><span id="b6f5179410b0740e1ac3d2448324b7ff"></span></div>
+                  <div class = "col-sm-3"><span id="eee48a98b24647697ef1434ba78540b7"></span></div>
+                  <div class = "col-sm-3"><span id="1db6f8e24084e128c7816097e577c81d"></span></div>
+                  <div class = "col-sm-3"><span id="b73e36b9ec13b8e23856d0e997ef1739"></span></div>
+                </h2>
+              </div>
+              <div class="row">
+                <div class="skills">
+                  <div class="circular-progress UNAM" id="1-584a9a7fad2e92001b69b614981be3d6"></div>
+                  <div class="circular-progress ITESM" id="1-bfbb696b54f938a870c98c9c3a3d2788"></div>
+                  <div class="circular-progress IPN" id="1-d8a15f666b503ab973a2b359e9eea620"></div>
+                  <div class="circular-progress UAM" id="1-0dbc5a5c9dfd4c62674fa47e95d26db0"></div>
                 </div>
               </div>
-            </div>
-            <div class="row">
-              <p>Tecnologico de Monterrey</p>
-              <div class="progress">
-                <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="83" aria-valuemin="0" aria-valuemax="100" style="width:0%">
-                  0 activiades
+              <br>
+              <hr id="l1">
+              <br>
+              <br>
+              <div class="row">
+                  <h2>
+                    <div class = "col-sm-3"><span id="b5e04b4c196a15a5c0a8eea809e734a3"></span></div>
+                    <div class = "col-sm-3"><span id="fee9901d24e60449d5a367af25434419"></span></div>
+                    <div class = "col-sm-3"><span id="b73e36b9ec13b8e23856d0e997eddb8a"></span></div>
+                    <div class = "col-sm-3"><span id="7c4b4f6c182ba0dc751da372fec5a6fb"></span></div>
+                  </h2>
+                </div>
+              <div class="row">
+                <div class="skills">
+                    <div class="circular-progress TecNM" id="1-1fe8ee471a7865360985f77d208e41ed"></div>
+                    <div class="circular-progress ITAM" id="1-29facf1acacebbca3699d4464cddce3f"></div>
+                    <div class="circular-progress UAEMex" id="1-77063a31f3b57770d294f1619565710b"></div>
+                    <div class="circular-progress UDG" id="1-b014e9c06a62216f185484cda802b276"></div>
                 </div>
               </div>
-            </div>
-            <div class="row">
-              <p>IPN</p>
-              <div class="progress">
-                <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="83" aria-valuemin="0" aria-valuemax="100" style="width:0%">
-                  0 activiades
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <p>Universida Autonoma Metropolitana</p>
-              <div class="progress">
-                <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="83" aria-valuemin="0" aria-valuemax="100" style="width:0%">
-                  0 activiades
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <p>Tecnologico de Monterrey</p>
-              <div class="progress">
-                <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="83" aria-valuemin="0" aria-valuemax="100" style="width:0%">
-                  0 activiades
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <p>ITAM</p>
-              <div class="progress">
-                <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="83" aria-valuemin="0" aria-valuemax="100" style="width:0%">
-                  0 activiades
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <p>UAEMex</p>
-              <div class="progress">
-                <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="83" aria-valuemin="0" aria-valuemax="100" style="width:0%">
-                  5 activiades
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <p>UDG</p>
-              <div class="progress">
-                <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="83" aria-valuemin="0" aria-valuemax="100" style="width:0%">
-                  75 activiades
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <p>Universida Autonoma de Nuevo Leon</p>
-              <div class="progress">
-                <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="83" aria-valuemin="0" aria-valuemax="100" style="width:0%">
-                  0 activiades
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <p>Universidad Anahuac</p>
-              <div class="progress">
-                <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="83" aria-valuemin="0" aria-valuemax="100" style="width:0%">
-                  0 activiades
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <p>Otras Universidades</p>
-              <div class="progress">
-                <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="83" aria-valuemin="0" aria-valuemax="100" style="width:0%">
-                  0 activiades
-                </div>
-              </div>
-            </div>
+              <br>
+              <hr id="l1">
+              <br>
+              <br>
+                <div class="row">
+                    <h2>
+                      <div class = "col-sm-3"><span id="e911f59348207a40586d847bc37f9a74"></span></div>
+                      <div class = "col-sm-3"><span id="57e77eeb9087fac8c340f21eec1c9777"></span></div>
+                      <div class = "col-sm-3"><span id="7c4b4f6c182ba0dc751da372fec95879"></span></div>
+                      <div class = "col-sm-3"><span id="57e77eeb9087fac8c340f21eec21d3b5"></span></div>
+                    </h2>
+                  </div>
+                <div class="row">
+                  <div class="skills">
+                      <div class="circular-progress UANL" id="1-4fa8e759c4ad03bd659b31f5ae8083a9"></div>
+                      <div class="circular-progress Anahuac" id="1-d1895f7171f3b785d6400e1391e97436"></div>
+                      <div class="circular-progress UNITEC" id="1-901571addfd7ae140393092105b7ed1e"></div>
+                      <div class="circular-progress UVM" id="1-d5d57a4f35c298ce9967ca7fb9e9ba20"></div>
+                  </div>
+                  </div>
+                  <br>
+                <hr id="l1">
+                <br>
+                <br>
           </div>
         </div>
         </div>
@@ -305,7 +269,7 @@
                 <div style="background : #000000;
                   color : #ffffff;
                   padding : 4px;
-                  width : 900px;
+                  width : 800px;
                   height : 400px;
                   overflow : auto; ">
                 <div id="entries"></div>
@@ -316,21 +280,21 @@
                 </h3>
                 <form id="addEntry">
                   <div class="field">
-                    <label class="label">Nombre</label>
+                    <label class="label"></label>
                     <div class="control">
-                      <input class="input" type="text" placeholder="your name" id="name">
+                      <input class="input" type="text" placeholder="Tu nombre" id="nombre">
                     </div>
                   </div>
                   <div class="field">
-      <br>              <label class="label">Email</label>
+      <br>              <label class="label"></label>
                     <div class="control">
-                      <input class="input" type="text" placeholder="your email" id="email">
+                      <input class="input" type="text" placeholder="Tu correo" id="correo">
                     </div>
                   </div>
                   <div class="field">
-      <br>              <label class="label">Comentario</label>
+      <br>              <label class="label"></label>
                     <div class="control">
-                      <textarea class="textarea" placeholder="your comment" id="comment"></textarea>
+                      <textarea class="textarea" placeholder="Tu aportacion" id="comentario"></textarea>
                     </div>
                   </div>
                   <div class="control">
@@ -377,7 +341,7 @@
                           <div class="hover-text">
                             <h4>Data Science</h4>
                           </div>
-                          <img src="../protected/images/categorias/IconData.png" class="img-responsive" alt="Project Title">
+                          <img src="./images/categorias/IconData.png" class="img-responsive" alt="Project Title">
                         </a>
                       </div>
                     </div>
@@ -389,7 +353,7 @@
                           <div class="hover-text">
                             <h4>Cloud</h4>
                           </div>
-                          <img src="../protected/images/categorias/IconCloud.png" class="img-responsive" alt="Project Title">
+                          <img src="./images/categorias/IconCloud.png" class="img-responsive" alt="Project Title">
                         </a>
                       </div>
                     </div>
@@ -401,7 +365,7 @@
                           <div class="hover-text">
                             <h4>Internet of Things</h4>
                           </div>
-                          <img src="../protected/images/categorias/IconIoT.png" class="img-responsive" alt="Project Title">
+                          <img src="./images/categorias/IconIoT.png" class="img-responsive" alt="Project Title">
                         </a>
                       </div>
                     </div>
@@ -418,69 +382,66 @@
             </div>
           </div>
           </div>
-          <script type="text/javascript" src="../javascript/jquery.1.11.1.js"></script>
-          <script type="text/javascript" src="../javascript/bootstrap.js"></script>
-          <script type="text/javascript" src="../javascript/SmoothScroll.js"></script>
-          <script type="text/javascript" src="../javascript/easypiechart.js"></script>
-          <script type="text/javascript" src="../javascript/jquery.prettyPhoto.js"></script>
-          <script type="text/javascript" src="../javascript/jquery.isotope.js"></script>
-          <script type="text/javascript" src="../javascript/jquery.counterup.js"></script>
-          <script type="text/javascript" src="../javascript/waypoints.js"></script>
-          <script type="text/javascript" src="../javascript/jqBootstrapValidation.js"></script>
+          <script>
+              var currentValue = 0;
+              function handleClick(rating) {
+                currentValue = rating.value;
+                document.getElementById("rat").value = currentValue;
+              }
+          </script>
+          <!-- <script type="text/javascript" src="./javascript/jquery.1.11.1.js"></script> -->
+          <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+        
+          <script type="text/javascript" src="./javascript/bootstrap.js"></script>
+          <!-- <script type="text/javascript" src="./javascript/SmoothScroll.js"></script> -->
+          <script type="text/javascript" src="./javascript/jquery.prettyPhoto.js"></script>
+          <!-- <script type="text/javascript" src="./javascript/jquery.isotope.js"></script> -->
+          <!-- <script type="text/javascript" src="./javascript/jquery.counterup.js"></script>
+          <script type="text/javascript" src="./javascript/easypiechart.js"></script> -->
+          <script type="text/javascript" src="./javascript/waypoints.js"></script>
+          <script type="text/javascript" src="./javascript/jqBootstrapValidation.js"></script>
+         
           <script id="entries-template" type="text/x-handlebars-template">
             {{#each entries}}
             <div class="box">
               <article class="media">
-                <div class="media-left">
+                <div class="media">
                   <figure class="image is-64x64">
-                    <img src="{{icon}}" alt="No Image">
+                    <br><img src="{{icon}}" alt="No Image">
                   </figure>
-                </div>
-                <div class="media-content">
-                  <div class="content">
-                    <p>
-                      <strong>{{name}}</strong> <small>{{email}}</small>
-                      <br> {{comment}}
-                    </p>
-                  </div>
-                </div>
-              </article>
+              <strong>{{nombre}}</strong> 
+              <br><strong>{{correo}}</strong>
+                     <br> {{comentario}}
+               </article>
+              </div>
             </div>
             {{/each}}
           </script>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
+          <script src="./javascript/cloudant.js"></script>
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-          <script src="guestbook.js"></script>
-          <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+          <script src="./javascript/guestbook.js"></script>
+          <!-- <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script> -->
           <script>
-              $.getJSON('/protected/api/idPayload', function (id_token) {
-                $('#userNameSpan').html(id_token.name);
-                $('#universidad').html(id_token.email);
-              });
-            /*  userProfileManager.getAttribute(function(Q) {
-                $('#universidad').html(Q);
-              });*/
+            //para el nombre de usuario
+            var user;
+            $.getJSON('/protected/api/idPayload', function (id_token) {
+              $('#userName').html(id_token.name);
+              user = id_token.email;
+              document.getElementById("user").value = user;
+            });
           </script>
-          
-         <!--<script id='userProfileManager'>
-             const Q = require ("q");
-              const userProfileManager = require("ibmcloud-appid").UserProfileManager;
-              userProfileManager.init();
-              var accessToken = req.session[WebAppStrategy.AUTH_CONTEXT].accessToken;
-              UserProfileManager.app.getAttribute = function (accessToken, givenName) {
-            	  const deferred = Q.defer();
-	              if (!accessToken.isString(accessToken) || !accessToken.isString(givenName)) {
-		            log.error("getAttribute invalid invocation parameters");
-		            return Q.reject();
-            	  }
-	              logger.debug("Getting attribute ", givenName);
-	              var profilesUrl = this.userProfilesServerUrl + ATTRIBUTES_ENDPOINT + "/" + givenName;
-            	  handleRequest(accessToken, null, "GET", profilesUrl, "getAttribute", deferred);
-	              return deferred.promise;
-              };
-
-              userProfileManager.setAttribute(accessToken, universidad, v).then(function (attributes) {
-              });
-            </script>-->
-           </body>
-</html>
+          <script>
+          //para las instituciones
+          let dropdown = $('#ins');
+          dropdown.empty();
+          dropdown.append('<option selected="true" disabled> Institucion </option>');
+          dropdown.prop('selectedIndex', 0);
+          $.getJSON('/protected/api/inst', function (data){
+            var h = data.docs;
+            $.each(h, function (key, entry){
+             dropdown.append(new Option(entry.nombre));
+            });
+          })
+          </script>
+          </body>

@@ -15,6 +15,11 @@ const express = require("express");
 const session = require("express-session");
 const passport = require("passport");
 const appID = require("ibmcloud-appid");
+require('dotenv').config({ path: './localdev-config.json'});
+
+var cloudbd = require('./inst.js');
+var Cloudbd = new cloudbd();
+
 
 const WebAppStrategy = appID.WebAppStrategy;
 
@@ -23,6 +28,9 @@ const app = express();
 const CALLBACK_URL = "/ibm/cloud/appid/callback";
 
 const port = process.env.PORT || 3000;
+
+
+
 
 // Setup express application to use express-session middleware
 // Must be configured with proper session storage for production
@@ -61,13 +69,25 @@ app.use("/protected", passport.authenticate(WebAppStrategy.STRATEGY_NAME));
 // This will statically serve pages:
 app.use(express.static("public"));
 
-// // This will statically serve the protected page (after authentication, since /protected is a protected area):
+// This will statically serve the protected page (after authentication, since /protected is a protected area):
 app.use('/protected', express.static("protected"));
 
 app.get("/logout", (req, res) => {
 	WebAppStrategy.logout(req);
 	res.redirect("/");
 });
+
+app.get("/protected/api/inst", (req, res) => {
+	Cloudbd.getDB().then(function(result){
+		//console.log(result);
+		res.send(result);
+	});
+});
+/* app.get("/protected/api/graphs", (req, res) => {
+	Cloudbd.getDB2().then(function(result){
+		res.send(result);
+	});
+}); */
 
 //Serves the identity token payload
 app.get("/protected/api/idPayload", (req, res) => {
@@ -79,8 +99,11 @@ app.get('/error', (req, res) => {
 });
 
 app.listen(port, () => {
+	Cloudbd.conexion();
+	//Cloudbd.conexionB();
 	console.log("Listening on http://localhost:" + port);
 });
+
 
 function getAppIDConfig() {
 	let config;
@@ -98,4 +121,5 @@ function getAppIDConfig() {
 		}
 	}
 	return config;
-}
+};
+

@@ -1,6 +1,5 @@
 /**
  * jQuery json-viewer
- * @author: Alexandre Bodelot <alexandre.bodelot@gmail.com>
  */
 (function($){
 

@@ -1,0 +1,20 @@
+var Cloudant = require('ins');
+var dbins;
+          class DB {
+            getIns(nombre){
+                return new Promise(function (resolve, reject){
+                    var apiUrl1 = 'https://9ae74487-3c39-48d2-8c77-e8e08435d8f0-bluemix:f79e6d0fb071befbaafc4724041b675300b7f4738c2f1cee8c026497b4d838ef@9ae74487-3c39-48d2-8c77-e8e08435d8f0-bluemix.cloudantnosqldb.appdomain.cloud/institucion';
+                    dbins.find({ selector: { _id: nombre} }, function(error, result){
+                        if (error){
+                            console.log('Error en ins');
+                            console.log(error);
+                            reject(error);
+                        }
+                        else {
+                            var object = result.docs[0];
+                            resolve(object);
+                        }
+                    });
+            });
+        }
+    }

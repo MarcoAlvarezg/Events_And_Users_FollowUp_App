@@ -1,5 +1,6 @@
 /*Cualquier modificacion del estilo y diseño se hace por medio de esta pantalla
 Ultima modifiacion Edgar para agregacion de formulario */
+
 body, html {
   font-family: 'IBM Plex Sans', sans-serif;
   text-rendering: optimizeLegibility !important;
@@ -89,7 +90,28 @@ ul, ol {
   webkit-padding: 0;
   moz-padding: 0;
 }
+#l1 {
 
+  height: 4px;
+  width: 85%;
+  text-align: center;
+  position: relative;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#6b4da8+0,4977c2+100 */
+  background: rgb(73, 119, 194);
+  /* Old browsers */
+  background: -moz-linear-gradient(left, rgba(23, 175, 75, 0.85) 0%, rgba(23, 175, 75, 0.85) 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, rgba(23, 175, 75, 0.85, 0.85) 0%, rgba(23, 175, 75, 0.85) 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, rgba(23, 175, 75, 0.85, 0.85) 0%, rgba(23, 175, 75, 0.85) 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6b4da8', endColorstr='#4977c2', GradientType=1);
+  /* IE6-9 */
+  margin: 0 auto;
+  margin-bottom: 30px;
+  border: 0;
+
+}
 hr {
   height: 4px;
   width: 70px;
@@ -254,7 +276,7 @@ Modificacion de la foto de inicio */
   height: auto;
   text-align: center;
   color: #fff;
-  background: url(../images/intro-bg.jpg) no-repeat center center;
+  background: url(../images/about.jpg) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -264,7 +286,7 @@ Modificacion de la foto de inicio */
 .intro .overlay {
   padding: 100px 0;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#6b4da8+0,4977c2+100&0.85+0,0.85+100 */
-  background: -moz-linear-gradient(left, rgba(82, 151, 93, 0.85) 0%, rgba(73, 147, 92, 0.85) 100%);
+  background: -moz-linear-gradient(left, rgba(82, 151, 148, 0.85) 0%, rgba(73, 147, 92, 0.85) 100%);
   /* FF3.6-15 */
   background: -webkit-linear-gradient(left, rgba(82, 151, 93, 0.85) 0%, rgba(73, 147, 92, 0.85) 100%);
   /* Chrome10-25,Safari5.1-6 */
@@ -340,7 +362,7 @@ Modificacion de la foto de inicio */
   height: auto;
   text-align: center;
   color: #fff;
-  background: url(../images/intro-bg.jpg) no-repeat center center;
+  background: url(../images/about.jpg) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -564,7 +586,7 @@ ol.type li a:hover {
 
 #achievements {
   color: #fff;
-  background: url(../images/contact-bg.jpg);
+  background: url(../images/final.jpeg);
   background-color: #7bc3d1;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -577,11 +599,11 @@ ol.type li a:hover {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#6b4da8+0,4977c2+100 */
   /*background: rgb(107, 77, 168);*/
   /* Old browsers */
-  background: -moz-linear-gradient(left, rgba(59, 126, 120, 0.85) 0%, rgba(70, 131, 123, 0.85) 100%);
+  background: -moz-linear-gradient(left, rgb(151, 231, 255) 0%, rgb(151, 231, 255) 100%);
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(left, rgba(59, 126, 120, 0.85) 0%, rgba(70, 131, 123, 0.85) 100%);
+  background: -webkit-linear-gradient(left, rgb(151, 231, 255) 0%, rgb(151, 231, 255) 100%);
   /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right, rgba(59, 126, 120, 0.85) 0%, rgba(70, 131, 123, 0.85) 100%);
+  background: linear-gradient(to right, rgb(151, 231, 255) 0%, rgb(151, 231, 255) 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6b4da8', endColorstr='#4977c2', GradientType=1);
   /* IE6-9 */
@@ -645,7 +667,7 @@ ol.type li a:hover {
 
 #contact {
   color: #fff;
-  background: url(../images/contact-bg.jpg) no-repeat center top;
+  background: url(../images/final.jpeg) no-repeat center top;
   background-color: #7bc3d1;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -822,4 +844,463 @@ label {
     margin-bottom: 20px;
 
   }
+}
+.star-rating {
+  text-align: center;
+}
+
+.rating {
+  display: inline-block;
+  position: relative;
+}
+.rating input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  height: 1px;
+  width: 1px;
+  bottom: 0;
+}
+
+.star {
+  transform: rotate(35deg);
+  -moz-transform: rotate(35deg);
+  -ms-transform: rotate(35deg);
+  -webkit-transform: rotate(35deg);
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -ms-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  border-bottom: 1.26em solid #D3D3D3;
+  border-left: 1.8em solid transparent;
+  border-right: 1.8em solid transparent;
+  display: inline-block;
+  height: 0;
+  margin-bottom: 0.9em;
+  margin-top: 0.9em;
+  position: relative;
+  width: 0;
+  margin-right: .4em;
+  float: right;
+}
+.star:before, .star:after {
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -ms-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  content: '';
+  display: block;
+  height: 0;
+  position: absolute;
+  width: 0;
+  z-index: -1;
+}
+.star:before {
+  transform: rotate(-35deg);
+  -moz-transform: rotate(-35deg);
+  -ms-transform: rotate(-35deg);
+  -webkit-transform: rotate(-35deg);
+  border-bottom: 1.44em solid #D3D3D3;
+  border-left: 0.54em solid transparent;
+  border-right: 0.54em solid transparent;
+  left: -1.17em;
+  top: -0.81em;
+}
+.star:after {
+  transform: rotate(-70deg);
+  -moz-transform: rotate(-70deg);
+  -ms-transform: rotate(-70deg);
+  -webkit-transform: rotate(-70deg);
+  border-bottom: 1.26em solid #D3D3D3;
+  border-left: 1.8em solid transparent;
+  border-right: 1.8em solid transparent;
+  left: -1.89em;
+  top: 0.054em;
+}
+
+.star-5.active, .star-5.active ~ .star {
+  border-bottom-color: #FF5254;
+}
+.star-5.active:before, .star-5.active:after, .star-5.active ~ .star:before, .star-5.active ~ .star:after {
+  border-bottom-color: #FF5254;
+}
+
+input[type="radio"] + .star-5 {
+  cursor: pointer;
+}
+input[type="radio"] + .star-5:hover, input[type="radio"] + .star-5:hover ~ .star {
+  border-bottom-color: #FF5254;
+}
+input[type="radio"] + .star-5:hover:before, input[type="radio"] + .star-5:hover:after, input[type="radio"] + .star-5:hover ~ .star:before, input[type="radio"] + .star-5:hover ~ .star:after {
+  border-bottom-color: #FF5254;
+}
+
+.rating:not(:hover) .radio-5:checked ~ .star {
+  border-bottom-color: #FF5254;
+}
+.rating:not(:hover) .radio-5:checked ~ .star:before, .rating:not(:hover) .radio-5:checked ~ .star:after {
+  border-bottom-color: #FF5254;
+}
+
+.star-4.active, .star-4.active ~ .star {
+  border-bottom-color: #FF6C35;
+}
+.star-4.active:before, .star-4.active:after, .star-4.active ~ .star:before, .star-4.active ~ .star:after {
+  border-bottom-color: #FF6C35;
+}
+
+input[type="radio"] + .star-4 {
+  cursor: pointer;
+}
+input[type="radio"] + .star-4:hover, input[type="radio"] + .star-4:hover ~ .star {
+  border-bottom-color: #FF6C35;
+}
+input[type="radio"] + .star-4:hover:before, input[type="radio"] + .star-4:hover:after, input[type="radio"] + .star-4:hover ~ .star:before, input[type="radio"] + .star-4:hover ~ .star:after {
+  border-bottom-color: #FF6C35;
+}
+
+.rating:not(:hover) .radio-4:checked ~ .star {
+  border-bottom-color: #FF6C35;
+}
+.rating:not(:hover) .radio-4:checked ~ .star:before, .rating:not(:hover) .radio-4:checked ~ .star:after {
+  border-bottom-color: #FF6C35;
+}
+
+.star-3.active, .star-3.active ~ .star {
+  border-bottom-color: #FF9900;
+}
+.star-3.active:before, .star-3.active:after, .star-3.active ~ .star:before, .star-3.active ~ .star:after {
+  border-bottom-color: #FF9900;
+}
+
+input[type="radio"] + .star-3 {
+  cursor: pointer;
+}
+input[type="radio"] + .star-3:hover, input[type="radio"] + .star-3:hover ~ .star {
+  border-bottom-color: #FF9900;
+}
+input[type="radio"] + .star-3:hover:before, input[type="radio"] + .star-3:hover:after, input[type="radio"] + .star-3:hover ~ .star:before, input[type="radio"] + .star-3:hover ~ .star:after {
+  border-bottom-color: #FF9900;
+}
+
+.rating:not(:hover) .radio-3:checked ~ .star {
+  border-bottom-color: #FF9900;
+}
+.rating:not(:hover) .radio-3:checked ~ .star:before, .rating:not(:hover) .radio-3:checked ~ .star:after {
+  border-bottom-color: #FF9900;
+}
+
+.star-2.active, .star-2.active ~ .star {
+  border-bottom-color: #3F9E37;
+}
+.star-2.active:before, .star-2.active:after, .star-2.active ~ .star:before, .star-2.active ~ .star:after {
+  border-bottom-color: #3F9E37;
+}
+
+input[type="radio"] + .star-2 {
+  cursor: pointer;
+}
+input[type="radio"] + .star-2:hover, input[type="radio"] + .star-2:hover ~ .star {
+  border-bottom-color: #3F9E37;
+}
+input[type="radio"] + .star-2:hover:before, input[type="radio"] + .star-2:hover:after, input[type="radio"] + .star-2:hover ~ .star:before, input[type="radio"] + .star-2:hover ~ .star:after {
+  border-bottom-color: #3F9E37;
+}
+
+.rating:not(:hover) .radio-2:checked ~ .star {
+  border-bottom-color: #3F9E37;
+}
+.rating:not(:hover) .radio-2:checked ~ .star:before, .rating:not(:hover) .radio-2:checked ~ .star:after {
+  border-bottom-color: #3F9E37;
+}
+
+.star-1.active, .star-1.active ~ .star {
+  border-bottom-color: #14892c;
+}
+.star-1.active:before, .star-1.active:after, .star-1.active ~ .star:before, .star-1.active ~ .star:after {
+  border-bottom-color: #14892c;
+}
+
+input[type="radio"] + .star-1 {
+  cursor: pointer;
+}
+input[type="radio"] + .star-1:hover, input[type="radio"] + .star-1:hover ~ .star {
+  border-bottom-color: #14892c;
+}
+input[type="radio"] + .star-1:hover:before, input[type="radio"] + .star-1:hover:after, input[type="radio"] + .star-1:hover ~ .star:before, input[type="radio"] + .star-1:hover ~ .star:after {
+  border-bottom-color: #14892c;
+}
+
+.rating:not(:hover) .radio-1:checked ~ .star {
+  border-bottom-color: #14892c;
+}
+.rating:not(:hover) .radio-1:checked ~ .star:before, .rating:not(:hover) .radio-1:checked ~ .star:after {
+  border-bottom-color: #14892c;
+}
+
+/*código para barras de progreso*/
+
+body {
+  background: rgba(59, 126, 120, 0.85);
+}
+
+h1 {
+  color: #fff;
+  text-align: center;
+}
+
+.circular-progress {
+  position: relative;
+  margin: auto;
+}
+.circular-progress, .circular-progress:before, .circular-progress:after {
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50%;
+}
+.circular-progress:before, .circular-progress:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+}
+.circular-progress:before {
+  line-height: 8rem;
+  padding: .5em;
+  box-sizing: border-box;
+  font-size: 1.8rem;
+}
+.circular-progress:after {
+  line-height: 13rem;
+}
+
+.UNAM {
+  background: linear-gradient(0deg, rgb(170, 159, 2) 50%, rgba(170, 159, 2, 0.2) 50%);
+  transform: rotate(0deg);
+}
+.UNAM:before, .UNAM:after {
+  color: rgb(18, 37, 143);
+}
+.UNAM:before {
+  content: "UNAM";
+  background: rgb(151, 231, 255) content-box;
+  transform: rotate(0deg);
+  text-transform: uppercase;
+}
+.UNAM:after {
+  content:"";
+  background: linear-gradient(transparent 50%, rgb(151, 231, 255)  50%);
+  transform: scale(1.1) rotate(0deg);
+}
+
+.ITESM {
+  background: linear-gradient(0deg, rgb(0, 43, 233) 50%, rgba(0, 43, 233, 0.2) 50%);
+  transform: rotate(0deg);
+}
+.ITESM:before, .ITESM:after {
+  color: rgb(0, 43, 233);
+}
+.ITESM:before {
+  content: "ITESM";
+  background: rgb(151, 231, 255)  content-box;
+  transform: rotate(0deg);
+  text-transform: uppercase;
+}
+.ITESM:after {
+  content: "";
+  background: linear-gradient(transparent 50%, rgb(151, 231, 255) 50%);
+  transform: scale(1.1) rotate(0deg);
+}
+
+.IPN {
+  background: linear-gradient(0deg, rgb(112, 0, 0) 50%, rgba(112, 0, 0, 0.2) 50%);
+  transform: rotate(0deg);
+}
+.IPN:before, .IPN:after {
+  color: rgb(112, 0, 0);
+}
+.IPN:before {
+  content: "IPN";
+  background: rgb(151, 231, 255) content-box;
+  transform: rotate(0deg);
+  text-transform: uppercase;
+}
+.IPN:after {
+  content: "";
+  background: linear-gradient(transparent 50%, rgb(151, 231, 255) 50%);
+  transform: scale(1.1) rotate(0deg);
+}
+.UAM {
+  background: linear-gradient(0deg, black 50%, rgba(0, 0, 0, 0.2) 50%);
+  transform: rotate(0deg);
+}
+.UAM:before, .UAM:after {
+  color: black;
+}
+.UAM:before {
+  content: "UAM";
+  background: rgb(151, 231, 255) content-box;
+  transform: rotate(0deg);
+  text-transform: uppercase;
+}
+.UAM:after {
+  content:"";
+  background: linear-gradient(transparent 50%, rgb(151, 231, 255)  50%);
+  transform: scale(1.1) rotate(0deg);
+}
+
+.TecNM {
+  background: linear-gradient(0deg, rgb(53, 107, 255) 50%, rgba(3, 107, 255, 0.2) 50%);
+  transform: rotate(0deg);
+}
+.TecNM:before, .TecNM:after {
+  color: rgb(3, 107, 255);
+}
+.TecNM:before {
+  content: "TecNM";
+  background: rgb(151, 231, 255)  content-box;
+  transform: rotate(0deg);
+  text-transform: uppercase;
+}
+.TecNM:after {
+  content: "";
+  background: linear-gradient(transparent 50%, rgb(151, 231, 255) 50%);
+  transform: scale(1.1) rotate(0deg);
+}
+
+.ITAM {
+  background: linear-gradient(0deg, rgb(11, 88, 56) 50%, rgba(11, 88, 56, 0.2) 50%);
+  transform: rotate(0deg);
+}
+.ITAM:before, .ITAM:after {
+  color: rgb(11, 88, 56);
+}
+.ITAM:before {
+  content: "ITAM";
+  background: rgb(151, 231, 255) content-box;
+  transform: rotate(0deg);
+  text-transform: uppercase;
+}
+.ITAM:after {
+  content: "";
+  background: linear-gradient(transparent 50%, rgb(151, 231, 255) 50%);
+  transform: scale(1.1) rotate(0deg);
+}
+.UAEMex {
+  background: linear-gradient(0deg, rgb(12, 100, 42) 50%, rgba(12, 100, 42, 0.2) 50%);
+  transform: rotate(0deg);
+}
+.UAEMex:before, .UAEMex:after {
+  color: rgb(170, 159, 2);
+}
+.UAEMex:before {
+  content: "UAEMex";
+  background: rgb(151, 231, 255) content-box;
+  transform: rotate(0deg);
+  text-transform: uppercase;
+}
+.UAEMex:after {
+  content:"";
+  background: linear-gradient(transparent 50%, rgb(151, 231, 255)  50%);
+  transform: scale(1.1) rotate(0deg);
+}
+
+.UDG {
+  background: linear-gradient(0deg, rgb(179, 37, 37) 50%, rgba(179, 37, 37, 0.2) 50%);
+  transform: rotate(0deg);
+}
+.UDG:before, .UDG:after {
+  color: rgb(0, 35, 133);
+}
+.UDG:before {
+  content: "UDG";
+  background: rgb(151, 231, 255)  content-box;
+  transform: rotate(0deg);
+  text-transform: uppercase;
+}
+.UDG:after {
+  content: "";
+  background: linear-gradient(transparent 50%, rgb(151, 231, 255) 50%);
+  transform: scale(1.1) rotate(0deg);
+}
+
+.UANL {
+  background: linear-gradient(0deg, rgb(0, 20, 196) 50%, rgba(0, 20, 196, 0.2) 50%);
+  transform: rotate(0deg);
+}
+.UANL:before, .UANL:after {
+  color: rgb(201, 187, 0);
+}
+.UANL:before {
+  content: "UANL";
+  background: rgb(151, 231, 255) content-box;
+  transform: rotate(0deg);
+  text-transform: uppercase;
+}
+.UANL:after {
+  content: "";
+  background: linear-gradient(transparent 50%, rgb(151, 231, 255) 50%);
+  transform: scale(1.1) rotate(0deg);
+}
+.Anahuac {
+  background: linear-gradient(0deg, rgb(255, 145, 0) 50%, rgba(255, 145, 0, 0.2) 50%);
+  transform: rotate(0deg);
+}
+.Anahuac:before, .Anahuac:after {
+  color: rgb(109, 60, 34);
+}
+.Anahuac:before {
+  content: "Anáhuac";
+  background: rgb(151, 231, 255) content-box;
+  transform: rotate(0deg);
+  text-transform: uppercase;
+}
+.Anahuac:after {
+  content:"";
+  background: linear-gradient(transparent 50%, rgb(151, 231, 255)  50%);
+  transform: scale(1.1) rotate(0deg);
+}
+
+.UNITEC {
+  background: linear-gradient(0deg, steelblue 50%, rgba(70, 130, 180, 0.2) 50%);
+  transform: rotate(0deg);
+}
+.UNITEC:before, .UNITEC:after {
+  color: steelblue;
+}
+.UNITEC:before {
+  content: "UNITEC";
+  background: rgb(151, 231, 255)  content-box;
+  transform: rotate(0deg);
+  text-transform: uppercase;
+}
+.UNITEC:after {
+  content: "";
+  background: linear-gradient(transparent 50%, rgb(151, 231, 255) 50%);
+  transform: scale(1.1) rotate(0deg);
+}
+
+.UVM {
+  background: linear-gradient(0deg, rgb(184, 6, 0) 50%, rgba(184, 6, 0, 0.2) 50%);
+  transform: rotate(0deg);
+}
+.UVM:before, .UVM:after {
+  color: black;
+}
+.UVM:before {
+  content: "UVM";
+  background: rgb(151, 231, 255) content-box;
+  transform: rotate(0deg);
+  text-transform: uppercase;
+}
+.UVM:after {
+  content: "";
+  background: linear-gradient(transparent 50%, rgb(151, 231, 255) 50%);
+  transform: scale(1.1) rotate(0deg);
+}
+.skills {
+  display: flex;
+  margin-top: 4em;
+  flex-wrap: wrap;
 }

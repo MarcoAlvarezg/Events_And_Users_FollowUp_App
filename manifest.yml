@@ -1,3 +1,5 @@
 applications:
-- name: unknown-node-0332bc67-c6be-46a0-876f-e7780160f64f
+- name: Developers-IBM
   memory: 256M
+  services:
+        - appIDInstanceName-alias
