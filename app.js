@@ -83,11 +83,6 @@ app.get("/protected/api/inst", (req, res) => {
 		res.send(result);
 	});
 });
-/* app.get("/protected/api/graphs", (req, res) => {
-	Cloudbd.getDB2().then(function(result){
-		res.send(result);
-	});
-}); */
 
 //Serves the identity token payload
 app.get("/protected/api/idPayload", (req, res) => {
@@ -100,7 +95,6 @@ app.get('/error', (req, res) => {
 
 app.listen(port, () => {
 	Cloudbd.conexion();
-	//Cloudbd.conexionB();
 	console.log("Listening on http://localhost:" + port);
 });
 

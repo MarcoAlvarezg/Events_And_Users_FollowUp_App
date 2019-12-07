@@ -1,25 +1,117 @@
-# IBM Cloud App ID
-Node Sample Template App for the IBM Cloud App ID service. The App ID Dashboard overwrites the manifest.yml and localdev-config.json files with the user's information when they download a Node sample app. When downloaded, you can either run the application locally or in IBM Cloud.
+
+# Functions de IBM Cloud [Functions](#Functions)
+Servicio de IBM cloud que permite hacer POST y GET a cloudant en tiempo real
+
+# IBM Cloud App ID [AppId](#Appid)
+Servicio de IBM cloud que te permite gestionar cuentas e inicio de sesion en una aplicacion
 
 [![IBM Cloud powered][img-ibmcloud-powered]][url-ibmcloud]
-[![Node Badge][img-node-badge]][url-node-badge]
-[![Travis][img-travis-master]][url-travis-master]
-[![Coveralls][img-coveralls-master]][url-coveralls-master]
-[![Codacy][img-codacy]][url-codacy]
 
-[![GithubWatch][img-github-watchers]][url-github-watchers]
-[![GithubStars][img-github-stars]][url-github-stars]
-[![GithubForks][img-github-forks]][url-github-forks]
+# Functions
+
+## Configuración de Functions
+En esta sección configuraremos nuestro servicio de Functions.
+1. Secuencia de acciones para escribir a la base de datos
+	1. Vamos al catálogo y buscamos Cloud Functions
+ 	2. Una vez dentro seleccionamos Actions
+	3. Damos click en Create
+	5. Damos click en Create action
+	6. Ponemos el nombre prepare-entry-for-save y seleccionamos Node.js 6 como el Runtime, damos click en Create
+	7. Cambiamos el código por el siguiente:
+		``` js
+		function main(params) {
+		 if (!params.nombre || !params.comentario) {
+		  return Promise.reject({ error: 'no nombre or comentario'});
+		  }
+		 return {
+		  doc: {
+		   createdAt: new Date(),
+		   nombre: params.nombre,
+		   correo: params.correo,
+		   comentario: params.comentario
+		  }
+		 };
+	 	}
+		```
+	8. Lo salvamos
+	9. Para añadir nuestra acción a una secuencia primero nos vamos al tab “Enclosing Secuences” y damos click en “Add to Sequence”
+ 	10.	Para el nombre de la secuencia ponemos save-guestbook-entry-sequence y posteriormente damos click en Create and Add
+	11.	Una vez que esta creada nuestra secuencia le damos click y damos click en Add posteriormente
+ 	12.	Damos click en Use Public y seleccionamos Cloudant
+ 	13.	Seleccionamos la acción create-document, damos click en New Binding, ponemos de nombre de nuestro paquete binding-for-guestbook y en Cloudant Instance seleccionamos Input Your Own Credentials
+ 	14.	 Para llenar todos los datos posteriores copiamos lo que teníamos en el servicio de Cloudant como credenciales y damos click en Add:
+ 	15.	Para probar que esté funcionando, damos click en change input e ingresamos nuestro siguiente JSON y damos click en Apply y luego en Invoke
+	 ```json
+		{
+		"nombre": "John Smith",
+		"correo": "john@smith.com",
+		"comentario": "this is my comment"
+		}
+	```
+	Una vez hecho esto podremos verlo escrito en nuestra base de datos de Cloudant en la sección Documents
+ 
+2. Secuencia de acciones para obtener las entradas de la base de datos
+Esta secuencia la usaremos para tomar las entradas de cada usuario y sus respectivos comentarios
+	1.	En nuestra tab de functions creamos una acción Node.js y le ponemos el nombre set-read-input, siguiendo el mismo proceso que en la acción anterior
+	2.	Reemplazamos el código que viene, esta acción pasa los parámetros apropiados a nuestra siguiente acción
+		```js
+		function main(params) {
+		 return {
+		  params: {
+		   include_docs: true
+		   }
+		 };
+		}
+		```
+	3. Damos click en Save 
+	4. Damos click en Enclosing Sequences, Add to Sequence y Create New con el nombre read-guestbook-entries-sequence damos click en Create and Add
+	5. Damos click en Actions y  damos click en read-guestbook-entries-sequence
+ 	6. Damos click en Add para crear una segunda acción en la secuencia
+	7. Seleccionamos Public y Cloudant
+ 	8.	Seleccionamos list-documents en actions y seleccionamos el binding binding-for-guestbook y posteriormente damos click en Add
+ 	9.	Damos click en Add para añadir una acción más a la secuencia, esta es la que va a dar el formato de los documentos cuando regresen de Cloudant
+	10.	La nombraremos format-entries y posteriormente damos click en Create and add 
+	11.	Damos click en format-entries y reemplazamos el código con:
+		```JS
+		const md5 = require('spark-md5');
+			
+		function main(params) {
+		 return {
+		  entries: params.rows.map((row) => { return {
+		   nombre: row.doc.nombre,
+		   correo: row.doc.correo,
+		   comentario: row.doc.comentario,
+		   createdAt: row.doc.createdAt,
+		   icon: (row.doc.correo ? `https://secure.gravatar.com/avatar/${md5.hash(row.doc.correo.trim().toLowerCase())}?s=64` : null)
+		  }})
+		 };
+		}
+		```
+	12.	Salvamos y damos click en invoke
+ 
+## Configurar el API
+1.	Dentro de nuestras acciones seleccionamos nuestras secuencias y en la tab de Endpoints damos click en Enable Web Action y damos click en Save
+ 
+2.	Nos vamos a Functions y damos click en APIs
+ 
+3.	Damos click en Create Managed API
+4.	En el API name ponemos guestbook y en el path ponemos /guestbook y damos click en create operation
+ 
+5.	Creamos un path que sea /entries ponemos el verbo a GET y seleccionamos la secuencia read-guestbook-entries-sequence y damos click en Create
+ 
+6.	Realizamos la misma acción pero ahora con un POST y la secuencia save-guestbook-entries-sequence y damos click en Create
+7.	Salvamos y exponemos la API
+
+# AppId
 
 ## Table of Contents
-* [Contents](#contents)
-* [Requirements](#requirements)
-* [Running Locally](#running-locally)
-* [Running in IBM Cloud](#running-in-ibm-cloud)
-* [Clarification](#clarification)
-* [License](#license)
+* [Contenido](#Contenido)
+* [Requerimientos](#Requerimientos)
+* [Ejecucion local](#Ejecucion-local)
+* [Ejecucion en IBM Cloud](#Ejecucion-en-IBM-cloud)
+* [Licencia](#Licencia)
 
-## Contents
+## Contenido
 
 `app.js`  Uses Express to set the routes.
 
@@ -29,10 +121,10 @@ Node Sample Template App for the IBM Cloud App ID service. The App ID Dashboard 
 we check whether the user is authorized or not. In the case where the user is not authorized, we send a request to the
 authentication server to start the OAuth flow. If the user is authorized, we show the protected data.
 
-## Requirements
+## Requerimientos
 * Node 6.0.0 or higher
 
-## Running Locally
+## Ejecucion local
 
 Run the following commands:
 ```bash
@@ -41,7 +133,7 @@ npm start
 ```
 Use the link http://localhost:3000 to load the web application in browser.
 
-## Running in Cloud Foundry
+## Ejecucion en IBM Cloud
 
 ### Prerequisites
 Before you begin, make sure that IBM Cloud CLI is installed.
@@ -143,15 +235,11 @@ You also need an IBM Cloud container registry namespace (see https://cloud.ibm.c
    
     `open http://{CLUSTER_ENDPOINT}:30000`
 
-## Clarification
-This sample runs on one instance and uses the session to store the authorization data.
-In order to run it in production mode, use services such as Redis to store the relevant data.
-
 ## See More
 #### Protecting Node.js Web Applications with IBM Cloud App ID
 https://www.youtube.com/watch?v=6roa1ZOvwtw
 
-## License
+## Licencia
 
 Copyright (c) 2019 IBM Corporation
 
@@ -163,22 +251,3 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 [img-ibmcloud-powered]: https://img.shields.io/badge/ibm%20cloud-powered-blue.svg
 [url-ibmcloud]: https://www.ibm.com/cloud/
-
-[img-node-badge]: https://img.shields.io/badge/platform-node-lightgrey.svg?style=flat
-[url-node-badge]: https://developer.node.com/index.html
-
-[img-travis-master]: https://travis-ci.org/ibm-cloud-security/app-id-sample-node.svg?branch=master
-[url-travis-master]: https://travis-ci.org/ibm-cloud-security/app-id-sample-node?branch=master
-
-[img-coveralls-master]: https://coveralls.io/repos/github/ibm-cloud-security/app-id-sample-node/badge.svg
-[url-coveralls-master]: https://coveralls.io/github/ibm-cloud-security/app-id-sample-node
-
-[img-codacy]: https://api.codacy.com/project/badge/Grade/fb042b4cb2f048968b567cde2251edcc
-[url-codacy]: https://www.codacy.com/app/ibm-cloud-security/app-id-sample-node
-
-[img-github-watchers]: https://img.shields.io/github/watchers/ibm-cloud-security/app-id-sample-node.svg?style=social&label=Watch
-[url-github-watchers]: https://github.com/ibm-cloud-security/app-id-sample-node/watchers
-[img-github-stars]: https://img.shields.io/github/stars/ibm-cloud-security/app-id-sample-node.svg?style=social&label=Star
-[url-github-stars]: https://github.com/ibm-cloud-security/app-id-sample-node/stargazers
-[img-github-forks]: https://img.shields.io/github/forks/ibm-cloud-security/app-id-sample-node.svg?style=social&label=Fork
-[url-github-forks]: https://github.com/ibm-cloud-security/app-id-sample-node/network
