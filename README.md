@@ -3,7 +3,7 @@
 [Functions](#Functions)
 Servicio de IBM cloud que permite hacer POST y GET a una base de datos en tiempo real
 
-github de SERVERlESS para desplegar con githubpages [SERVERLESS][url-githubserverless]
+github de SERVERLESS para desplegar con githubpages: [SERVERLESS][url-githubserverless]
 
 [![IBM Cloud powered][img-ibmcloud-powered]][url-ibmcloud]
 
@@ -119,31 +119,29 @@ Esta secuencia la usaremos para tomar las entradas de cada usuario y sus respect
 
 ## Contenido
 
-`app.js`  Uses Express to set the routes.
+`app.js`  Usa Express para establecer rutas.
 
-`public/index.html`  The application landing page. Click **Login** to start.
+`public/index.html`  La pagina de destino de la aplicacion. Hacer click en **Iniciar sesion** para iniciar.
 
-`protected/protected.html`  The application's protected page. After clicking the **Login** button, the user is redirected here. This is where
-we check whether the user is authorized or not. In the case where the user is not authorized, we send a request to the
-authentication server to start the OAuth flow. If the user is authorized, we show the protected data.
+`protected/protected.html`  La pagina protegida de la aplicacion. Despues de hacer click en el boton de **Iniciar sesion**, el usuario es redrigido aqui. Aqui es donde se revisa si el usuario esta autorizado o no. En el caso en el que el usuario no este autorizado, se envia una solicitud al servidor de autenticacion para iniciar el flow de el OAuth. Si el usuario esta autorizado, se muestra la pagina y la informacion protegida.
 
 ## Requerimientos
-* Node 6.0.0 or higher
+* Node 6.0.0 o mayor
 
 ## Ejecucion local
 
-Run the following commands:
+Ejecuta los siguientes comandos:
 ```bash
 npm install
 npm start
 ```
-Use the link http://localhost:3000 to load the web application in browser.
+Usa el link http://localhost:3000 para cargar la aplicacion web en el navegador.
 
 ## Ejecucion en IBM Cloud
 
-### Prerequisites
-Before you begin, make sure that IBM Cloud CLI is installed.
-For more information visit: https://cloud.ibm.com/docs/cli?topic=cloud-cli-getting-started.
+### Prerequisitos
+Antes de empezar, asegurate que tienes instalado el CLI de IBM Cloud.
+Para mayor informacion visita: [IBMCLOUD-CLI][url-ibmcloud-cli]
 
 ### Deployment
 
@@ -258,3 +256,4 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 [img-ibmcloud-powered]: https://img.shields.io/badge/ibm%20cloud-powered-blue.svg
 [url-ibmcloud]: https://www.ibm.com/cloud/
 [url-githubserverless]: https://github.com/ibmdevelopermx/Serverless_Cloudant
+[url-ibmcloud-cli]: https://cloud.ibm.com/docs/cli?topic=cloud-cli-getting-started
