@@ -16,6 +16,8 @@ Servicio de IBM cloud que te permite gestionar cuentas e inicio de sesion en una
 # Functions
 
 ## Configuración de Functions
+Comentarios en Vivo
+![LIVEFEED](/docs/LIVEFEED.png)
 En esta sección configuraremos nuestro servicio de Functions.
 1. Secuencia de acciones para escribir a la base de datos
 	1. Vamos al catálogo y buscamos Cloud Functions
