@@ -109,6 +109,12 @@ Esta secuencia la usaremos para tomar las entradas de cada usuario y sus respect
  
 6.	Realizamos la misma acción pero ahora con un POST y la secuencia save-guestbook-entries-sequence y damos click en Create
 7.	Salvamos y exponemos la API
+8. Copiamos el link expuesto y lo cambiamo en ./protected/javascript/guestbook.js
+    ![link](/docs/ApiGuestbook.png)
+    ''' js
+    const apiUrl = '<url-api-functions>';
+    ```
+    en la linea 4
 
 # AppId
 

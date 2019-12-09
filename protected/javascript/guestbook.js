@@ -1,7 +1,7 @@
 /**
  * Web application
  */
-const apiUrl = 'https://service.us-east.apiconnect.ibmcloud.com/gws/apigateway/api/1dbe2b0e9520266b9a2bc03584352db5d4977b7cde6507f374f59e94236d5e6d/7fdb8107-a76d-4275-830d-019450118c56/teacherAdvocates';
+const apiUrl = '<url-de-functions>';
 const guestbook = {
   // retrieve the existing guestbook entries
   //leer los comentarios existentes

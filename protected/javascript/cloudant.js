@@ -1,10 +1,10 @@
 /*
  * Web application
  */
-var Url = "https://86c1ea06.us-south.apiconnect.appdomain.cloud/guestbook";
-var UrlU = "https://developerchain.mybluemix.net/protected/api/idPayload";
+var Url = "<url-de-functions>";
+var UrlU = "http:/localhost:3000//protected/api/idPayload";
 /* "http://localhost:3000/protected/api/idPayload"; */
-var UrlI = "https://developerchain.mybluemix.net/protected/api/inst";
+var UrlI = "http://localhost:3000/protected/api/inst";
 /* "http://localhost:3000/protected/api/inst"; */
 //fs file open
 
