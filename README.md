@@ -110,7 +110,7 @@ Esta secuencia la usaremos para tomar las entradas de cada usuario y sus respect
 
 # AppId
 
-## Table of Contents
+## Tabla de Contenidos
 * [Contenido](#Contenido)
 * [Requerimientos](#Requerimientos)
 * [Ejecucion local](#Ejecucion-local)
@@ -141,7 +141,7 @@ Usa el link http://localhost:3000 para cargar la aplicacion web en el navegador.
 
 ### Prerequisitos
 Antes de empezar, asegurate que tienes instalado el CLI de IBM Cloud.
-Para mayor informacion visita: [IBMCLOUD-CLI][url-ibmcloud-cli]
+Para mayor informacion visita: [IBMCloud-CLI][url-ibmcloud-cli]
 
 ### Deployment
 
