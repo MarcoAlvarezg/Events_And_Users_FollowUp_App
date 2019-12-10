@@ -293,4 +293,4 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 [url-github-join]: https://github.com/join
 [url-github-cli]: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 [url-githubdesktop]: https://desktop.github.com/
-[url-node]: (https://nodejs.org/es/download/)
+[url-node]: https://nodejs.org/es/download/
