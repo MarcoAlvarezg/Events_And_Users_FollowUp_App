@@ -1,6 +1,5 @@
 var Cloudant = require ('cloudant');
 var mydb;
-var data2;
 
 class cloudbd {
         conexion(){

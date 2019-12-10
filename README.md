@@ -1,19 +1,22 @@
 
 ## IBM Developer Advocates Team
+[![IBM Cloud powered][img-ibmcloud-powered]][url-ibmcloud]
 
 # Functions de IBM Cloud 
 [Functions](#Functions)
-Servicio de IBM cloud que permite hacer POST y GET a una base de datos en tiempo real
+Plataforma de IBM cloud de programacion poliglota FaaS (Functions-as-a-Service) para desarrollo de codigo ligero que escala dependiendo de la demanda
 
-github de SERVERLESS para desplegar con githubpages: [SERVERLESS][url-githubserverless]
-
-[![IBM Cloud powered][img-ibmcloud-powered]][url-ibmcloud]
+GitHub de SERVERLESS para desplegar con githubpages: [SERVERLESS][url-githubserverless]
+Para mayor informacion: [Functions][url-ibmcloud-Functions]
 
 # IBM Cloud App ID 
 [AppId](#Appid)
 Servicio de IBM cloud que te permite gestionar cuentas e inicio de sesion en una aplicacion
+Para mayor informacion: [App-id][url-ibmcloud-appid]
 
-[![IBM Cloud powered][img-ibmcloud-powered]][url-ibmcloud]
+# IBM Cloudant
+Servicio de IBM cloud que funciona como una base de datos completamente administrable para aplicaciones multinube hibridas
+Para mayor informacion: [Cloudant][url-ibmcloud-cloudant]
 
 ## Contenido
 
@@ -45,6 +48,8 @@ Servicio de IBM cloud que te permite gestionar cuentas e inicio de sesion en una
 	1.	Ingresamos a nuestro panel de control de IBM Cloud (console.bluemix.net)
 	2.	Una vez que tengamos el código nos vamos a Gestionar>Facturación y Uso>Facturación
 	3.	Buscamos “Códigos de características (Promocionales)”
+
+## Cloudant
 
 # Functions
 
@@ -150,7 +155,8 @@ Esta secuencia la usaremos para tomar las entradas de cada usuario y sus respect
     ![link](/docs/ApiGuestbook.png)
 
 Para el registro de Actividades
-![LIVEFEED](/docs/LIVEFEED.png)
+![LIVEFEED](/docs/Actividades.png)
+
 
     
 
@@ -286,6 +292,9 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 [img-ibmcloud-powered]: https://img.shields.io/badge/ibm%20cloud-powered-blue.svg
+[Functions]: https://www.ibm.com/cloud/functions
+[App-id]: https://www.ibm.com/cloud/app-id
+[Cloudant]: https://www.ibm.com/cloud/cloudant
 [url-ibmcloud]: https://www.ibm.com/cloud/
 [url-githubserverless]: https://github.com/ibmdevelopermx/Serverless_Cloudant
 [url-IBMCLOUD]: https://cloud.ibm.com/registration
