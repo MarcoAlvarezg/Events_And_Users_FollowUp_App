@@ -25,11 +25,11 @@ Servicio de IBM cloud que te permite gestionar cuentas e inicio de sesion en una
 
 
 ## Prework:
-* Cuenta de IBM Cloud (https://cloud.ibm.com/registration)
-* Instalar cli de IBM Cloud https://cloud.ibm.com/docs/cli/reference/ibmcloud?topic=cloud-cli-install-ibmcloud-cli 
-* Cuenta en github https://github.com/join
-* Instalar cli de GitHub (https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) o instalar GitHub Desktop (https://desktop.github.com/)
-* NodeJS (https://nodejs.org/es/download/)
+* Cuenta de [IBM Cloud][url-IBMCLOUD]
+* Instalar [cli de IBM Cloud][url-CLI-IBMCLOUD] 
+* Cuenta en [GitHub][url-github-join]
+* Instalar [cli de GitHub][url-github-cli] o instalar [GitHub Desktop][url-githubdesktop]
+* [NodeJS][url-node]
 * Utilizar safari, chrome, firefox, edge
 
 ### Cupones para Estudiantes y profesores
@@ -45,17 +45,6 @@ Servicio de IBM cloud que te permite gestionar cuentas e inicio de sesion en una
 	1.	Ingresamos a nuestro panel de control de IBM Cloud (console.bluemix.net)
 	2.	Una vez que tengamos el código nos vamos a Gestionar>Facturación y Uso>Facturación
 	3.	Buscamos “Códigos de características (Promocionales)”
-
-
-## Crear y configurar Cloudant DB:
-	1.De nuestro catálogo en console.bluemix.net seleccionamos Cloudant
-	2.Buscamos Cloudant
- 
-	3.Lo nombramos guestbook-db, seleccionamos Legacy Credentials y IAM, posteriormente creamos una instancia del servicio
-	4.Una vez que lo creamos dentro de nuestro servicio, le damos click en “Launch cloudant dashboard”
-	5.Nos vamos a la 3er tab de lado izquierdo, damos click en Create Database y la nombramos guestbook
- 
-	6.Regresamos al servicio y en el tab de “Service Credentials” generamos una nueva credencial
 
 # Functions
 
@@ -186,10 +175,6 @@ Usa el link http://localhost:3000 para cargar la aplicacion web en el navegador.
 
 ## Ejecucion en IBM Cloud
 
-### Prerequisitos
-Antes de empezar, asegurate que tienes instalado el CLI de IBM Cloud.
-Para mayor informacion visita: [IBMCloud-CLI][url-ibmcloud-cli]
-
 ### Deployment
 
 **Important:** Before going live, remove http://localhost:3000/* from the list of web redirect URLs located in "Manage Authentication" -> "Authentication Settings" page in the AppID dashboard.
@@ -303,4 +288,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 [img-ibmcloud-powered]: https://img.shields.io/badge/ibm%20cloud-powered-blue.svg
 [url-ibmcloud]: https://www.ibm.com/cloud/
 [url-githubserverless]: https://github.com/ibmdevelopermx/Serverless_Cloudant
-[url-ibmcloud-cli]: https://cloud.ibm.com/docs/cli?topic=cloud-cli-getting-started
+[url-IBMCLOUD]: https://cloud.ibm.com/registration
+[url-CLI-IBMCLOUD]: https://cloud.ibm.com/docs/cli/reference/ibmcloud?topic=cloud-cli-install-ibmcloud-cli
+[url-github-join]: https://github.com/join
+[url-github-cli]: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+[url-githubdesktop]: https://desktop.github.com/
+[url-node]: (https://nodejs.org/es/download/)
