@@ -19,7 +19,7 @@ Para mayor informacion: [![App-id][img-cloud-appid]][url-ibmcloud-appid]
 # IBM Cloudant
 Servicio de IBM cloud que funciona como una base de datos completamente administrable para aplicaciones multinube hibridas
 
-Para mayor informacion: [Cloudant][url-ibmcloud-cloudant]
+Para mayor informacion: [![Cloudant][img-cloud-cloudant]][url-ibmcloud-cloudant]
 
 ## Contenido
 
@@ -299,6 +299,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 [img-cloud-functions]: https://img.shields.io/badge/IBM%20cloud-Functions-red.svg
 [img-cloud-serverless]: https://img.shields.io/badge/IBM%20cloud-Serverless-green.svg
 [img-cloud-appid]: https://img.shields.io/badge/IBM%20cloud-AppID-red.svg
+[img-cloud-cloudant]: https://img.shields.io/badge/IBM%20cloud-Cloudant-red.svg
 [url-ibmcloud-appid]: https://www.ibm.com/cloud/app-id
 [url-ibmcloud-cloudant]: https://www.ibm.com/cloud/cloudant
 [url-ibmcloud]: https://www.ibm.com/cloud/
