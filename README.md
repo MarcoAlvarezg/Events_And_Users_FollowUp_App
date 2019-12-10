@@ -8,7 +8,7 @@ Plataforma de IBM cloud de programacion poliglota FaaS (Functions-as-a-Service) 
 
 GitHub de SERVERLESS para desplegar con githubpages: [SERVERLESS][url-githubserverless]
 
-Para mayor informacion: [Functions][url-ibmcloud-Functions]
+Para mayor informacion: [![Functions][img-cloud-functions]][url-ibmcloud-Functions]
 
 # IBM Cloud App ID 
 [AppId](#Appid)
@@ -296,6 +296,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 [img-ibmcloud-powered]: https://img.shields.io/badge/ibm%20cloud-powered-blue.svg
 [url-ibmcloud-Functions]: https://www.ibm.com/cloud/functions
+[img-cloud-functions]: https://img.shields.io/badge/IBM%20cloud-Functions-red.svg
 [url-ibmcloud-appid]: https://www.ibm.com/cloud/app-id
 [url-ibmcloud-cloudant]: https://www.ibm.com/cloud/cloudant
 [url-ibmcloud]: https://www.ibm.com/cloud/
