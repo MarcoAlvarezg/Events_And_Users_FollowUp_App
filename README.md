@@ -1,6 +1,6 @@
 
 ## IBM Developer Advocates Team
-[![IBM Cloud powered][img-IBMcloud-powered]][url-ibmcloud]
+[![IBM Cloud powered][img-ibmcloud-powered]][url-ibmcloud]
 
 # Functions de IBM Cloud 
 [Functions](#Functions)
