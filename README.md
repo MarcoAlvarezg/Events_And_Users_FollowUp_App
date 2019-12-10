@@ -7,15 +7,18 @@
 Plataforma de IBM cloud de programacion poliglota FaaS (Functions-as-a-Service) para desarrollo de codigo ligero que escala dependiendo de la demanda
 
 GitHub de SERVERLESS para desplegar con githubpages: [SERVERLESS][url-githubserverless]
+
 Para mayor informacion: [Functions][url-ibmcloud-Functions]
 
 # IBM Cloud App ID 
 [AppId](#Appid)
 Servicio de IBM cloud que te permite gestionar cuentas e inicio de sesion en una aplicacion
+
 Para mayor informacion: [App-id][url-ibmcloud-appid]
 
 # IBM Cloudant
 Servicio de IBM cloud que funciona como una base de datos completamente administrable para aplicaciones multinube hibridas
+
 Para mayor informacion: [Cloudant][url-ibmcloud-cloudant]
 
 ## Contenido
@@ -292,9 +295,9 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 [img-ibmcloud-powered]: https://img.shields.io/badge/ibm%20cloud-powered-blue.svg
-[Functions]: https://www.ibm.com/cloud/functions
-[App-id]: https://www.ibm.com/cloud/app-id
-[Cloudant]: https://www.ibm.com/cloud/cloudant
+[url-ibmcloud-Functions]: https://www.ibm.com/cloud/functions
+[url-ibmcloud-appid]: https://www.ibm.com/cloud/app-id
+[url-ibmcloud-cloudant]: https://www.ibm.com/cloud/cloudant
 [url-ibmcloud]: https://www.ibm.com/cloud/
 [url-githubserverless]: https://github.com/ibmdevelopermx/Serverless_Cloudant
 [url-IBMCLOUD]: https://cloud.ibm.com/registration
