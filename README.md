@@ -1,4 +1,6 @@
 
+## IBM Developer Advocates Team
+
 # Functions de IBM Cloud 
 [Functions](#Functions)
 Servicio de IBM cloud que permite hacer POST y GET a una base de datos en tiempo real
@@ -12,6 +14,48 @@ github de SERVERLESS para desplegar con githubpages: [SERVERLESS][url-githubserv
 Servicio de IBM cloud que te permite gestionar cuentas e inicio de sesion en una aplicacion
 
 [![IBM Cloud powered][img-ibmcloud-powered]][url-ibmcloud]
+
+## Contenido
+
+`app.js`  Usa Express para establecer rutas.
+
+`public/index.html`  La pagina de destino de la aplicacion. Hacer click en **Iniciar sesion** para iniciar.
+
+`protected/protected.html`  La pagina protegida de la aplicacion. Despues de hacer click en el boton de **Iniciar sesion**, el usuario es redrigido aqui. Aqui es donde se revisa si el usuario esta autorizado o no. En el caso en el que el usuario no este autorizado, se envia una solicitud al servidor de autenticacion para iniciar el flow de el OAuth. Si el usuario esta autorizado, se muestra la pagina y la informacion protegida.
+
+
+## Prework:
+* Cuenta de IBM Cloud (https://cloud.ibm.com/registration)
+* Instalar cli de IBM Cloud https://cloud.ibm.com/docs/cli/reference/ibmcloud?topic=cloud-cli-install-ibmcloud-cli 
+* Cuenta en github https://github.com/join
+* Instalar cli de GitHub (https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) o instalar GitHub Desktop (https://desktop.github.com/)
+* NodeJS (https://nodejs.org/es/download/)
+* Utilizar safari, chrome, firefox, edge
+
+### Cupones para Estudiantes y profesores
+ 
+
+	1.	Acceder al HUB para Software para uso académico. Y navegar hasta la parte de abajo de la pagina https://onthehub.com/ibm/?utm_sourc=ibm-ai-productpage&utm_medium=onthehubproductpage&utm_campaign=IBM 
+	2.	Buscar el WebStore del instituto/escuela al que perteneces. 
+	3.	En caso de no contar con WebStore, acceder al portal de IBM Academic Initiative y seleccionar la opción de <Students> 
+	4.	Seleccionar <Add to Cart> para IBM Bluemix – 6 Month Trial. 
+	5.	Realizar el registro correspondiente utilizando la cuenta de correo académica 
+ 
+### Cargar créditos en IBM Cloud
+	1.	Ingresamos a nuestro panel de control de IBM Cloud (console.bluemix.net)
+	2.	Una vez que tengamos el código nos vamos a Gestionar>Facturación y Uso>Facturación
+	3.	Buscamos “Códigos de características (Promocionales)”
+
+
+## Crear y configurar Cloudant DB:
+	1.De nuestro catálogo en console.bluemix.net seleccionamos Cloudant
+	2.Buscamos Cloudant
+ 
+	3.Lo nombramos guestbook-db, seleccionamos Legacy Credentials y IAM, posteriormente creamos una instancia del servicio
+	4.Una vez que lo creamos dentro de nuestro servicio, le damos click en “Launch cloudant dashboard”
+	5.Nos vamos a la 3er tab de lado izquierdo, damos click en Create Database y la nombramos guestbook
+ 
+	6.Regresamos al servicio y en el tab de “Service Credentials” generamos una nueva credencial
 
 # Functions
 
@@ -115,6 +159,10 @@ Esta secuencia la usaremos para tomar las entradas de cada usuario y sus respect
     ```
     en la linea 4
     ![link](/docs/ApiGuestbook.png)
+
+Para el registro de Actividades
+![LIVEFEED](/docs/LIVEFEED.png)
+
     
 
 # AppId
@@ -126,17 +174,7 @@ Esta secuencia la usaremos para tomar las entradas de cada usuario y sus respect
 * [Ejecucion en IBM Cloud](#Ejecucion-en-IBM-cloud)
 * [Licencia](#Licencia)
 
-## Contenido
-
-`app.js`  Usa Express para establecer rutas.
-
-`public/index.html`  La pagina de destino de la aplicacion. Hacer click en **Iniciar sesion** para iniciar.
-
-`protected/protected.html`  La pagina protegida de la aplicacion. Despues de hacer click en el boton de **Iniciar sesion**, el usuario es redrigido aqui. Aqui es donde se revisa si el usuario esta autorizado o no. En el caso en el que el usuario no este autorizado, se envia una solicitud al servidor de autenticacion para iniciar el flow de el OAuth. Si el usuario esta autorizado, se muestra la pagina y la informacion protegida.
-
-## Requerimientos
-* Node 6.0.0 o mayor
-
+(falta agregar configuraciones de appid en esta parte)
 ## Ejecucion local
 
 Ejecuta los siguientes comandos:
