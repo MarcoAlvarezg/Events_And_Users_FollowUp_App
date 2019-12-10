@@ -4,7 +4,7 @@
 
 # Functions de IBM Cloud 
 [Functions](#Functions)
-Plataforma de IBM cloud de programacion poliglota FaaS (Functions-as-a-Service) para desarrollo de codigo ligero que escala dependiendo de la demanda
+Plataforma de IBM cloud de programacion poliglota FaaS (Functions-as-a-Service) para desarrollo de codigo ligero que escala dependiendo de la demanda.
 
 GitHub de Serverless para desplegar con githubpages: [![Serverless][img-cloud-serverless]][url-githubserverless]
 
@@ -12,7 +12,7 @@ Para mayor informacion: [![Functions][img-cloud-functions]][url-ibmcloud-Functio
 
 # IBM Cloud App ID 
 [AppId](#Appid)
-Servicio de IBM cloud que de manera sencilla agrega autentificacion, asegura backends y APIs, y gestiona datos de usuarios especificos en una aplicacion web y movil
+Servicio de IBM cloud que de manera sencilla agrega autentificacion, asegura backends y APIs, y gestiona datos de usuarios especificos en una aplicacion web y movil.
 
 Para mayor informacion: [![App-id][img-cloud-appid]][url-ibmcloud-appid]
 
@@ -22,6 +22,7 @@ Es una base de datos completamente administrable para aplicaciones multinube hib
 Para mayor informacion: [![Cloudant][img-cloud-cloudant]][url-ibmcloud-cloudant]
 
 # IBM Cloud Object Storage
+Almacenamiento en la nube flexible, rentable y escalable para datos no estructurados.
 
 Para mayor informacion: [![Object][img-cloud-object]][url-ibmcloud-object]
 
