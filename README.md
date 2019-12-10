@@ -21,6 +21,10 @@ Es una base de datos completamente administrable para aplicaciones multinube hib
 
 Para mayor informacion: [![Cloudant][img-cloud-cloudant]][url-ibmcloud-cloudant]
 
+# IBM Cloud Object Storage
+
+Para mayor informacion: [![Object][img-cloud-object]][url-ibmcloud-object]
+
 ## Prework:
 * Cuenta de [IBM Cloud][url-IBMCLOUD]
 * Instalar [CLI de IBM Cloud][url-CLI-IBMCLOUD] 
@@ -54,7 +58,15 @@ Para mayor informacion: [![Cloudant][img-cloud-cloudant]][url-ibmcloud-cloudant]
 
 
 ## Cloudant
-
+En esta seccion iniciaremos un servicio de Base de Datos no relacional.
+1. Buscaremos en nuestro catalogo **Cloudant**.
+2. Seleccionaremos el Plan **Lite**, le asignamos un nombre y en los metodos de autentificacion seleccionamos **Use both legacy credentials and IAM** y creamos el servicio.
+3. Ya que el servicio este suministrado, ingresamos al servicio y damos click en **Launch Cloudant Dashboard** para que nos abre una pestaña nueva donde podremos ver nuestra base de datos, podemos tener mas de una base de datos con difernete nombre dentro del servicio.
+4. Crearemos una base de datos nueva en el apartado superior derecho **Create Database**, crearemos 4 que son:
+    1. guestbook. Donde guardaremos los comentarios en vivo
+    2. institucion. Donde cargaremos una lista que es parte de el Registro de Actividades
+    3. teach_adv. Donde se guardaran las actividades
+    4. pictures_teach_adv. Donde se guardaran imagenes como reporte de actividades
 
 # Functions
 
@@ -298,7 +310,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 [img-ibmcloud-powered]: https://img.shields.io/badge/IBM%20cloud-powered-blue.svg
 [url-ibmcloud-Functions]: https://www.ibm.com/cloud/functions
+[url-ibmcloud-object]: https://www.ibm.com/cloud/object-storage
 [img-cloud-functions]: https://img.shields.io/badge/IBM%20cloud-Functions-red.svg
+[img-cloud-object]: https://img.shields.io/badge/IBM%20cloud-Object-Storage-red.svg
 [img-cloud-serverless]: https://img.shields.io/badge/IBM%20cloud-Serverless-green.svg
 [img-cloud-appid]: https://img.shields.io/badge/IBM%20cloud-AppID-red.svg
 [img-cloud-cloudant]: https://img.shields.io/badge/IBM%20cloud-Cloudant-red.svg
