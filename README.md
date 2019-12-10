@@ -294,9 +294,9 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-[img-ibmcloud-powered]: https://img.shields.io/badge/ibm%20cloud-powered-blue.svg
+[img-ibmcloud-powered]: https://img.shields.io/badge/IBM%20cloud-powered-blue.svg
 [url-ibmcloud-Functions]: https://www.ibm.com/cloud/functions
-[img-cloud-functions]: https://img.shields.io/badge/IBM%10cloud-Functions-red.svg
+[img-cloud-functions]: https://img.shields.io/badge/IBM%30cloud-Functions-red.svg
 [url-ibmcloud-appid]: https://www.ibm.com/cloud/app-id
 [url-ibmcloud-cloudant]: https://www.ibm.com/cloud/cloudant
 [url-ibmcloud]: https://www.ibm.com/cloud/
