@@ -312,7 +312,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 [url-ibmcloud-Functions]: https://www.ibm.com/cloud/functions
 [url-ibmcloud-object]: https://www.ibm.com/cloud/object-storage
 [img-cloud-functions]: https://img.shields.io/badge/IBM%20cloud-Functions-red.svg
-[img-cloud-object]: https://img.shields.io/badge/IBM%20cloud-Object-Storage-red.svg
+[img-cloud-object]: https://img.shields.io/badge/IBM%20cloud-Object-red.svg
 [img-cloud-serverless]: https://img.shields.io/badge/IBM%20cloud-Serverless-green.svg
 [img-cloud-appid]: https://img.shields.io/badge/IBM%20cloud-AppID-red.svg
 [img-cloud-cloudant]: https://img.shields.io/badge/IBM%20cloud-Cloudant-red.svg
