@@ -12,29 +12,20 @@ Para mayor informacion: [![Functions][img-cloud-functions]][url-ibmcloud-Functio
 
 # IBM Cloud App ID 
 [AppId](#Appid)
-Servicio de IBM cloud que te permite gestionar cuentas e inicio de sesion en una aplicacion
+Servicio de IBM cloud que de manera sencilla agrega autentificacion, asegura backends y APIs, y gestiona datos de usuarios especificos en una aplicacion web y movil
 
 Para mayor informacion: [![App-id][img-cloud-appid]][url-ibmcloud-appid]
 
 # IBM Cloudant
-Servicio de IBM cloud que funciona como una base de datos completamente administrable para aplicaciones multinube hibridas
+Es una base de datos completamente administrable para aplicaciones multinube hibrida con una completa compatibilidad de API.
 
 Para mayor informacion: [![Cloudant][img-cloud-cloudant]][url-ibmcloud-cloudant]
 
-## Contenido
-
-`app.js`  Usa Express para establecer rutas.
-
-`public/index.html`  La pagina de destino de la aplicacion. Hacer click en **Iniciar sesion** para iniciar.
-
-`protected/protected.html`  La pagina protegida de la aplicacion. Despues de hacer click en el boton de **Iniciar sesion**, el usuario es redrigido aqui. Aqui es donde se revisa si el usuario esta autorizado o no. En el caso en el que el usuario no este autorizado, se envia una solicitud al servidor de autenticacion para iniciar el flow de el OAuth. Si el usuario esta autorizado, se muestra la pagina y la informacion protegida.
-
-
 ## Prework:
 * Cuenta de [IBM Cloud][url-IBMCLOUD]
-* Instalar [cli de IBM Cloud][url-CLI-IBMCLOUD] 
+* Instalar [CLI de IBM Cloud][url-CLI-IBMCLOUD] 
 * Cuenta en [GitHub][url-github-join]
-* Instalar [cli de GitHub][url-github-cli] o instalar [GitHub Desktop][url-githubdesktop]
+* Instalar [CLI de GitHub][url-github-cli] o instalar [GitHub Desktop][url-githubdesktop]
 * [NodeJS][url-node]
 * Utilizar safari, chrome, firefox, edge
 
@@ -52,7 +43,18 @@ Para mayor informacion: [![Cloudant][img-cloud-cloudant]][url-ibmcloud-cloudant]
 	2.	Una vez que tengamos el código nos vamos a Gestionar>Facturación y Uso>Facturación
 	3.	Buscamos “Códigos de características (Promocionales)”
 
+
+## Contenido
+
+`app.js`  Usa Express para establecer rutas.
+
+`public/index.html`  La pagina de destino de la aplicacion. Hacer click en **Iniciar sesion** para iniciar.
+
+`protected/protected.html`  La pagina protegida de la aplicacion. Despues de hacer click en el boton de **Iniciar sesion**, el usuario es redrigido aqui. Aqui es donde se revisa si el usuario esta autorizado o no. En el caso en el que el usuario no este autorizado, se envia una solicitud al servidor de autenticacion para iniciar el flow de el OAuth. Si el usuario esta autorizado, se muestra la pagina y la informacion protegida.
+
+
 ## Cloudant
+
 
 # Functions
 
