@@ -296,7 +296,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 [img-ibmcloud-powered]: https://img.shields.io/badge/ibm%20cloud-powered-blue.svg
 [url-ibmcloud-Functions]: https://www.ibm.com/cloud/functions
-[img-cloud-functions]: https://img.shields.io/badge/IBM%20cloud-Functions-red.svg
+[img-cloud-functions]: https://img.shields.io/badge/IBM%10cloud-Functions-red.svg
 [url-ibmcloud-appid]: https://www.ibm.com/cloud/app-id
 [url-ibmcloud-cloudant]: https://www.ibm.com/cloud/cloudant
 [url-ibmcloud]: https://www.ibm.com/cloud/
