@@ -53,7 +53,7 @@ Para mayor informacion: [![Cloudant][img-cloud-cloudant]][url-ibmcloud-cloudant]
 `protected/protected.html`  La pagina protegida de la aplicacion. Despues de hacer click en el boton de **Iniciar sesion**, el usuario es redrigido aqui. Aqui es donde se revisa si el usuario esta autorizado o no. En el caso en el que el usuario no este autorizado, se envia una solicitud al servidor de autenticacion para iniciar el flow de el OAuth. Si el usuario esta autorizado, se muestra la pagina y la informacion protegida.
 
 
-## Cloudant
+# Cloudant
 En esta seccion iniciaremos un servicio de Base de Datos no relacional.
 1. Buscaremos en nuestro catalogo **Cloudant**.
 2. Seleccionaremos el Plan **Lite**, le asignamos un nombre y en los metodos de autentificacion seleccionamos **Use both legacy credentials and IAM** y creamos el servicio.
@@ -74,9 +74,9 @@ En esta sección configuraremos nuestra plataforma de IBM Cloud Functions.
 	1. Vamos al catálogo y buscamos Cloud Functions
  	2. Una vez dentro seleccionamos Actions
 	3. Damos click en Create
-	5. Damos click en Create action
-	6. Ponemos el nombre prepare-entry-for-save y seleccionamos Node.js 10 como el Runtime, damos click en Create
-	7. Cambiamos el código por el siguiente:
+	4. Damos click en Create action
+	5. Ponemos el nombre prepare-entry-for-save y seleccionamos Node.js 10 como el Runtime, damos click en Create
+	6. Cambiamos el código por el siguiente:
 		``` js
 		function main(params) {
 		 if (!params.nombre || !params.comentario) {
@@ -92,14 +92,14 @@ En esta sección configuraremos nuestra plataforma de IBM Cloud Functions.
 		 };
 	 	}
 		```
-	8. Lo salvamos
-	9. Para añadir nuestra acción a una secuencia primero nos vamos al tab “Enclosing Secuences” y damos click en “Add to Sequence”
- 	10.	Para el nombre de la secuencia ponemos save-guestbook-entry-sequence y posteriormente damos click en Create and Add
-	11.	Una vez que esta creada nuestra secuencia le damos click y damos click en Add posteriormente
- 	12.	Damos click en Use Public y seleccionamos Cloudant
- 	13.	Seleccionamos la acción "creare-document", damos click en New Binding, en "name" ponemos de nombre de nuestro paquete binding-for-guestbook y en Cloudant Instance seleccionamos Input Your Own Credentials
- 	14.	 Para llenar todos los datos posteriores copiamos y pegamos lo que teníamos en el servicio de Cloudant que seria "Username", "Password", "Host", y llenamos "Database" con el nombre que tiene nuestra base de datos "guestbook" y damos click en Add, luego en Save
- 	15.	Para probar que esté funcionando, damos click en change input e ingresamos nuestro siguiente JSON y damos click en Apply y luego en Invoke
+	7. Lo salvamos
+	8. Para añadir nuestra acción a una secuencia primero nos vamos al tab “Enclosing Secuences” y damos click en “Add to Sequence”
+ 	9.	Para el nombre de la secuencia ponemos save-guestbook-entry-sequence y posteriormente damos click en Create and Add
+	10.	Una vez que esta creada nuestra secuencia le damos click y damos click en Add posteriormente
+ 	11.	Damos click en Use Public y seleccionamos Cloudant
+ 	12.	Seleccionamos la acción "creare-document", damos click en New Binding, en "name" ponemos de nombre de nuestro paquete binding-for-guestbook y en Cloudant Instance seleccionamos Input Your Own Credentials
+ 	13.	 Para llenar todos los datos posteriores copiamos y pegamos lo que teníamos en el servicio de Cloudant que seria "Username", "Password", "Host", y llenamos "Database" con el nombre que tiene nuestra base de datos "guestbook" y damos click en Add, luego en Save
+ 	14.	Para probar que esté funcionando, damos click en change input e ingresamos nuestro siguiente JSON y damos click en Apply y luego en Invoke
 	 ```json
 		{
 		"nombre": "John Smith",
@@ -148,27 +148,127 @@ Esta secuencia la usaremos para tomar las entradas de cada usuario y sus respect
 		```
 	12.	Salvamos y damos click en invoke, debe sacar lo que tenemos en esa base de datos.
  
-## Configurar el API
-1.	Dentro de nuestras acciones seleccionamos nuestras secuencias y en la tab de Endpoints damos click en Enable Web Action y damos click en Save
- 
-2.	Nos vamos a Functions y damos click en APIs
- 
-3.	Damos click en Create Managed API
-4.	En el API name ponemos guestbook y en el path ponemos /guestbook y damos click en create operation
- 
-5.	Creamos un path que sea /entries ponemos el verbo a GET y seleccionamos la secuencia read-guestbook-entries-sequence y damos click en Create
- 
-6.	Realizamos la misma acción pero ahora con un POST y la secuencia save-guestbook-entries-sequence y damos click en Create
-7.	Salvamos y exponemos la API
-8. Copiamos el link expuesto y lo cambiamo en ./protected/javascript/guestbook.js
-    ``` js
-    const apiUrl = '<url-api-functions>';
-    ```
-    en la linea 4
-    ![link](/docs/ApiGuestbook.png)
+3. Configurar el API
+    1.	Dentro de nuestras acciones seleccionamos ambas secuencias y en la tab de Endpoints damos click en Enable Web Action y damos click en Save
+    
+    2.	Nos vamos a Functions y damos click en API
+    
+    3.	Damos click en Create Managed API
+    4.	En el API name ponemos guestbook y en el path ponemos /guestbook y damos click en create operation
+    
+    5.	Creamos un path que sea /entries ponemos el verbo a GET y seleccionamos la secuencia read-guestbook-entries-sequence y damos click en Create
+    
+    6.	Realizamos la misma acción pero ahora con un POST y la secuencia save-guestbook-entries-sequence y damos click en Create
+    7.	Salvamos y exponemos la API
+    8. Copiamos el link expuesto y lo cambiamo en ./protected/javascript/guestbook.js
+        ``` js
+        const apiUrl = '<url-api-functions>';
+        ```
+        en la linea 4
+        ![link](/docs/ApiGuestbook.png)
 
-Para el registro de Actividades
+**Para el registro de Actividades**
 ![LIVEFEED](/docs/Actividades.png)
+1. Secuencia de acciones para escribir a la base de datos
+	1. Regresamos a IBM Cloud Functions
+ 	2. Seleccionamos Actions
+    3. Damos click en Create
+	4. Damos click en Create action
+	5. Ponemos el nombre prepare-entry y seleccionamos Node.js 10 como el Runtime, damos click en Create
+	5. Cambiamos el código por el siguiente:
+		``` js
+		function main(params) {
+            console.log(params)
+            return {
+                doc: {
+                    createdAt: new Date(),
+                    user: params.user,
+                    activityType: params.actType,
+                    hours: parseInt(params.hours),
+                    location: params.loc,
+                    students: params.students,
+                    institucion: params.ins,
+                    rating: params.rating,
+                    comments: params.comment
+                }
+            };
+        }
+		```
+	6. Lo salvamos
+	7. Añadimos nuestra acción a una secuencia con la tab “Enclosing Secuences” y damos click en “Add to Sequence”
+ 	8.	Para el nombre de la secuencia ponemos save-entry y posteriormente damos click en Create and Add
+	9.	Una vez que esta creada nuestra secuencia le damos click y damos click en Add posteriormente
+ 	10.	Damos click en Use Public y seleccionamos Cloudant
+ 	11.	Seleccionamos la acción "creare-document", damos click en New Binding, en "name" ponemos de nombre de nuestro paquete binding-for-Activities y en Cloudant Instance seleccionamos Input Your Own Credentials
+ 	12.	 Para llenar todos los datos posteriores copiamos y pegamos lo que teníamos en el servicio de Cloudant que seria "Username", "Password", "Host", y llenamos "Database" con el nombre que tiene nuestra base de datos "teach_adv" y damos click en Add, luego en Save
+ 	13.	Para probar que esté funcionando, damos click en change input e ingresamos nuestro siguiente JSON y damos click en Apply y luego en Invoke
+	 ```json
+		{
+		"user": "john@smith.com",
+        "actType": "Taller o Workshop",
+        "hours": "3",
+        "loc": "pach",
+        "students": "10",
+        "ins": "Universidad",
+        "rating": "4",
+        "comment": "Todo bien"
+		}
+	```
+	Una vez hecho esto debemos verlo escrito en nuestra base de datos de Cloudant en la sección Documents
+ 
+2. Secuencia de acciones para obtener las entradas de la base de datos
+Esta secuencia la usaremos para tomar las entradas de cada usuario y sus respectivos comentarios
+	1.	En nuestra tab de functions creamos una acción Node.js 10 y le ponemos el nombre set-read, siguiendo el mismo proceso que en la acción anterior
+	2.	Reemplazamos el código que viene, esta acción pasa los parámetros apropiados a nuestra siguiente acción
+		```js
+		function main(params) {
+		 return {
+		  params: {
+		   include_docs: true
+		   }
+		 };
+		}
+		```
+	3. Damos click en Save 
+	4. Damos click en Enclosing Sequences, Add to Sequence y Create New con el nombre read-guestbook-entries-sequence damos click en Create and Add
+	5. Damos click en Actions y  damos click en read-entries
+ 	6. Damos click en Add para crear una segunda acción en la secuencia
+	7. Seleccionamos Public y Cloudant
+ 	8.	Seleccionamos list-documents en actions y seleccionamos el binding binding-for-Activities y posteriormente damos click en Add
+ 	9.	Damos click en Add para añadir una acción más a la secuencia, esta es la que va a dar el formato de los documentos cuando regresen de Cloudant
+	10.	La nombraremos format y posteriormente damos click en Create and add 
+	11.	Damos click en format y reemplazamos el código con:
+		```JS
+		const md5 = require('spark-md5');
+			
+		function main(params) {
+		 return {
+		  entries: params.rows.map((row) => { return {
+            name: row.doc.user,
+            hours: row.doc.hours,
+            institucion: row.doc.institucion,}})
+		 };
+		}
+		```
+	12.	Salvamos y damos click en invoke, debe sacar lo que tenemos en esa base de datos.
+ 
+3. Configurar el API
+    1.	Dentro de nuestras acciones seleccionamos ambas secuencias y en la tab de Endpoints damos click en Enable Web Action y damos click en Save
+    
+    2.	Nos vamos a Functions y damos click en API
+    
+    3.	Damos click en Create Managed API
+    4.	En el API name ponemos teachADV y en el path ponemos /entries y damos click en create operation
+    
+    5.	Creamos un path que sea /entries ponemos el verbo a GET y seleccionamos la secuencia read-entries y damos click en Create
+    
+    6.	Realizamos la misma acción pero ahora con un POST y la secuencia save-entries y damos click en Create
+    7.	Salvamos y exponemos la API
+    8. Copiamos el link expuesto y lo cambiamo en ./protected/javascript/cloudant.js
+        ``` js
+        const apiUrl = '<url-api-functions>';
+        ```
+        en la linea 4
 
 
     
