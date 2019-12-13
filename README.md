@@ -21,11 +21,6 @@ Es una base de datos completamente administrable para aplicaciones multinube hib
 
 Para mayor informacion: [![Cloudant][img-cloud-cloudant]][url-ibmcloud-cloudant]
 
-# IBM Cloud Object Storage
-Almacenamiento en la nube flexible, rentable y escalable para datos no estructurados.
-
-Para mayor informacion: [![Object][img-cloud-object]][url-ibmcloud-object]
-
 ## Prework:
 * Cuenta de [IBM Cloud][url-IBMCLOUD]
 * Instalar [CLI de IBM Cloud][url-CLI-IBMCLOUD] 
@@ -62,30 +57,30 @@ Para mayor informacion: [![Object][img-cloud-object]][url-ibmcloud-object]
 En esta seccion iniciaremos un servicio de Base de Datos no relacional.
 1. Buscaremos en nuestro catalogo **Cloudant**.
 2. Seleccionaremos el Plan **Lite**, le asignamos un nombre y en los metodos de autentificacion seleccionamos **Use both legacy credentials and IAM** y creamos el servicio.
-3. Ya que el servicio este suministrado, ingresamos al servicio y damos click en **Launch Cloudant Dashboard** para que nos abre una pestaña nueva donde podremos ver nuestra base de datos, podemos tener mas de una base de datos con difernete nombre dentro del servicio.
-4. Crearemos una base de datos nueva en el apartado superior derecho **Create Database**, crearemos 4 que son:
-    1. guestbook. Donde guardaremos los comentarios en vivo
-    2. institucion. Donde cargaremos una lista que es parte de el Registro de Actividades
-    3. teach_adv. Donde se guardaran las actividades
-    4. pictures_teach_adv. Donde se guardaran imagenes como reporte de actividades
+3. Ya que el servicio este suministrado, ingresamos al servicio y guardamos las credenciales del servicio para usarlas mas tarde. Estas se encuentran en la parte izquierda en la pestaña credenciales del servicio.
+4. Damos click en **Launch Cloudant Dashboard** en la pestaña de gestionar para que nos abra una pestaña nueva donde podremos ver nuestra base de datos, podemos tener mas de una base de datos con difernete nombre dentro del servicio.
+5. Crearemos una base de datos nueva en el apartado superior derecho **Create Database**, crearemos 3 que son:
+    1. guestbook: Donde guardaremos los comentarios en vivo
+    2. institucion: Donde cargaremos una lista que es parte de el Registro de Actividades
+    3. teach_adv: Donde se guardaran las actividades
 
 # Functions
 
 ## Configuración de Functions
-Comentarios en Vivo
+**Comentarios en Vivo**
 ![LIVEFEED](/docs/LIVEFEED.png)
-En esta sección configuraremos nuestro servicio de Functions.
+En esta sección configuraremos nuestra plataforma de IBM Cloud Functions.
 1. Secuencia de acciones para escribir a la base de datos
 	1. Vamos al catálogo y buscamos Cloud Functions
  	2. Una vez dentro seleccionamos Actions
 	3. Damos click en Create
 	5. Damos click en Create action
-	6. Ponemos el nombre prepare-entry-for-save y seleccionamos Node.js 6 como el Runtime, damos click en Create
+	6. Ponemos el nombre prepare-entry-for-save y seleccionamos Node.js 10 como el Runtime, damos click en Create
 	7. Cambiamos el código por el siguiente:
 		``` js
 		function main(params) {
 		 if (!params.nombre || !params.comentario) {
-		  return Promise.reject({ error: 'no nombre or comentario'});
+		  return Promise.reject({ error: 'no nombre o comentario'});
 		  }
 		 return {
 		  doc: {
@@ -102,21 +97,21 @@ En esta sección configuraremos nuestro servicio de Functions.
  	10.	Para el nombre de la secuencia ponemos save-guestbook-entry-sequence y posteriormente damos click en Create and Add
 	11.	Una vez que esta creada nuestra secuencia le damos click y damos click en Add posteriormente
  	12.	Damos click en Use Public y seleccionamos Cloudant
- 	13.	Seleccionamos la acción create-document, damos click en New Binding, ponemos de nombre de nuestro paquete binding-for-guestbook y en Cloudant Instance seleccionamos Input Your Own Credentials
- 	14.	 Para llenar todos los datos posteriores copiamos lo que teníamos en el servicio de Cloudant como credenciales y damos click en Add:
+ 	13.	Seleccionamos la acción "creare-document", damos click en New Binding, en "name" ponemos de nombre de nuestro paquete binding-for-guestbook y en Cloudant Instance seleccionamos Input Your Own Credentials
+ 	14.	 Para llenar todos los datos posteriores copiamos y pegamos lo que teníamos en el servicio de Cloudant que seria "Username", "Password", "Host", y llenamos "Database" con el nombre que tiene nuestra base de datos "guestbook" y damos click en Add, luego en Save
  	15.	Para probar que esté funcionando, damos click en change input e ingresamos nuestro siguiente JSON y damos click en Apply y luego en Invoke
 	 ```json
 		{
 		"nombre": "John Smith",
 		"correo": "john@smith.com",
-		"comentario": "this is my comment"
+		"comentario": "Este es mi comentario"
 		}
 	```
-	Una vez hecho esto podremos verlo escrito en nuestra base de datos de Cloudant en la sección Documents
+	Una vez hecho esto debemos verlo escrito en nuestra base de datos de Cloudant en la sección Documents
  
 2. Secuencia de acciones para obtener las entradas de la base de datos
 Esta secuencia la usaremos para tomar las entradas de cada usuario y sus respectivos comentarios
-	1.	En nuestra tab de functions creamos una acción Node.js y le ponemos el nombre set-read-input, siguiendo el mismo proceso que en la acción anterior
+	1.	En nuestra tab de functions creamos una acción Node.js 10 y le ponemos el nombre set-read-input, siguiendo el mismo proceso que en la acción anterior
 	2.	Reemplazamos el código que viene, esta acción pasa los parámetros apropiados a nuestra siguiente acción
 		```js
 		function main(params) {
@@ -151,7 +146,7 @@ Esta secuencia la usaremos para tomar las entradas de cada usuario y sus respect
 		 };
 		}
 		```
-	12.	Salvamos y damos click en invoke
+	12.	Salvamos y damos click en invoke, debe sacar lo que tenemos en esa base de datos.
  
 ## Configurar el API
 1.	Dentro de nuestras acciones seleccionamos nuestras secuencias y en la tab de Endpoints damos click en Enable Web Action y damos click en Save
