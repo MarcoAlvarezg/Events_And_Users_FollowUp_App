@@ -39,7 +39,7 @@ Para mayor informacion: [![Cloudant][img-cloud-cloudant]][url-ibmcloud-cloudant]
 	5.	Realizar el registro correspondiente utilizando la cuenta de correo académica 
  
 ### Cargar créditos en IBM Cloud
-	1.	Ingresamos a nuestro panel de control de IBM Cloud (console.bluemix.net)
+	1.	Ingresamos a nuestro panel de control de IBM Cloud (cloud.ibm.com)
 	2.	Una vez que tengamos el código nos vamos a Gestionar>Facturación y Uso>Facturación
 	3.	Buscamos “Códigos de características (Promocionales)”
 
@@ -175,7 +175,7 @@ Esta secuencia la usaremos para tomar las entradas de cada usuario y sus respect
     3. Damos click en Create
 	4. Damos click en Create action
 	5. Ponemos el nombre prepare-entry y seleccionamos Node.js 10 como el Runtime, damos click en Create
-	5. Cambiamos el código por el siguiente:
+	6. Cambiamos el código por el siguiente:
 		``` js
 		function main(params) {
             console.log(params)
@@ -194,14 +194,14 @@ Esta secuencia la usaremos para tomar las entradas de cada usuario y sus respect
             };
         }
 		```
-	6. Lo salvamos
-	7. Añadimos nuestra acción a una secuencia con la tab “Enclosing Secuences” y damos click en “Add to Sequence”
- 	8.	Para el nombre de la secuencia ponemos save-entry y posteriormente damos click en Create and Add
-	9.	Una vez que esta creada nuestra secuencia le damos click y damos click en Add posteriormente
- 	10.	Damos click en Use Public y seleccionamos Cloudant
- 	11.	Seleccionamos la acción "creare-document", damos click en New Binding, en "name" ponemos de nombre de nuestro paquete binding-for-Activities y en Cloudant Instance seleccionamos Input Your Own Credentials
- 	12.	 Para llenar todos los datos posteriores copiamos y pegamos lo que teníamos en el servicio de Cloudant que seria "Username", "Password", "Host", y llenamos "Database" con el nombre que tiene nuestra base de datos "teach_adv" y damos click en Add, luego en Save
- 	13.	Para probar que esté funcionando, damos click en change input e ingresamos nuestro siguiente JSON y damos click en Apply y luego en Invoke
+	7. Lo salvamos
+	8. Añadimos nuestra acción a una secuencia con la tab “Enclosing Secuences” y damos click en “Add to Sequence”
+ 	9.	Para el nombre de la secuencia ponemos save-entry y posteriormente damos click en Create and Add
+	10.	Una vez que esta creada nuestra secuencia le damos click y damos click en Add posteriormente
+ 	11.	Damos click en Use Public y seleccionamos Cloudant
+ 	12.	Seleccionamos la acción "creare-document", damos click en New Binding, en "name" ponemos de nombre de nuestro paquete binding-for-Activities y en Cloudant Instance seleccionamos Input Your Own Credentials
+ 	13.	 Para llenar todos los datos posteriores copiamos y pegamos lo que teníamos en el servicio de Cloudant que seria "Username", "Password", "Host", y llenamos "Database" con el nombre que tiene nuestra base de datos "teach_adv" y damos click en Add, luego en Save
+ 	14.	Para probar que esté funcionando, damos click en change input e ingresamos nuestro siguiente JSON y damos click en Apply y luego en Invoke
 	 ```json
 		{
 		"user": "john@smith.com",
@@ -277,12 +277,19 @@ Esta secuencia la usaremos para tomar las entradas de cada usuario y sus respect
 
 ## Tabla de Contenidos
 * [Contenido](#Contenido)
-* [Requerimientos](#Requerimientos)
+* [Configuracion del Servicio](#Configuracion-del-Servicio)
 * [Ejecucion local](#Ejecucion-local)
 * [Ejecucion en IBM Cloud](#Ejecucion-en-IBM-cloud)
 * [Licencia](#Licencia)
 
-(falta agregar configuraciones de appid en esta parte)
+<!-- (falta agregar configuraciones de appid en esta parte) -->
+
+## Configuracion del Servicio
+
+1. En IBM Cloud en el catalogo buscamos **App ID** y le damos click.
+2. Asignamos la Region mas cercana, nombre del servicio, etiquetas y la version **Lite**, le damos click a crear.
+3. Nos llevara a la pagina principal del Servicio, 
+
 ## Ejecucion local
 
 Ejecuta los siguientes comandos:
