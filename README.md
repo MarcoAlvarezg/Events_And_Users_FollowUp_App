@@ -288,6 +288,11 @@ Esta secuencia la usaremos para tomar las entradas de cada usuario y sus respect
 
 1. En IBM Cloud en el catalogo buscamos **App ID** y le damos click.
 2. Asignamos la Region mas cercana, nombre del servicio, etiquetas y la version **Lite**, le damos click a crear.
+
+![][/docs/Region-plan.png]
+
+![][/docs/name-create.png]
+
 3. Nos llevara a la pagina principal del Servicio, 
 
 ## Ejecucion local
