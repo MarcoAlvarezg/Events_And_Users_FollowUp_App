@@ -322,7 +322,7 @@ Esta secuencia la usaremos para tomar las entradas de cada usuario y sus respect
 
 ## Ejecucion local
 
-Primero regresamos a "Authentification Settings" donde ingresamos en el punto 4 de la configuración, para agregar la URL **"http://localhost:3000/* "**
+Primero regresamos a "Authentification Settings" donde ingresamos en el punto 4 de la configuración, para agregar la URL "http://localhost:3000/*
 
 Ejecuta los siguientes comandos en la terminal, en la carpeta clonada:
 ```bash
