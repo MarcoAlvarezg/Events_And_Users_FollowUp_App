@@ -293,7 +293,7 @@ Esta secuencia la usaremos para tomar las entradas de cada usuario y sus respect
 
 ![](/docs/name-create.png)
 
-3. Nos llevara a la pagina principal del Servicio, donde encontraremos de lado derecho la lista de opciones del servicio.
+3. Nos llevará a la pagina principal del Servicio, donde encontraremos de lado derecho la lista de opciones del servicio.
 	Nos dirigiremos a "Manage Authentication" y en el apartado de "Identity Providers" para asignar como los usuarios pueden crear su cuenta. Se puede elegir entre las siguientes:
 
 	![](/docs/cuentas.png)
@@ -316,12 +316,13 @@ Esta secuencia la usaremos para tomar las entradas de cada usuario y sus respect
 
 8. Eso nos dara unas credenciales que usaremos en nuestra aplicacion. Las cambiaremos en el archivo llamado "**localdev-congfig.json**" 
 
-	![](/docs/credentials.png)
-	
+	![](/docs/credentials.png)	
 
 
 
 ## Ejecucion local
+
+Primero regresamos a "Authentification Settings" donde ingresamos en el punto 4 de la configuración, para agregar la URL **"http://localhost:3000/* "**
 
 Ejecuta los siguientes comandos:
 ```bash

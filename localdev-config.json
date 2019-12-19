@@ -1,8 +1,8 @@
 {
-  "clientId": "19f9383c-43b4-45d9-93d8-8e6ebccfb7b9",
-  "oauthServerUrl": "https://us-south.appid.cloud.ibm.com/oauth/v4/0332bc67-c6be-46a0-876f-e7780160f64f",
+  "clientId": "f637831a-7696-4565-af07-adb1540d8db5",
+  "tenantId": "fc00498e-2f9b-4090-9806-905bd909bf96",
+  "secret": "MzgzYjEyOWQtNTIyYy00OTM2LWIzMzUtZDNiZDJmYmJmMzFj",
+  "oauthServerUrl": "https://us-south.appid.cloud.ibm.com/oauth/v4/fc00498e-2f9b-4090-9806-905bd909bf96",
   "profilesUrl": "https://us-south.appid.cloud.ibm.com",
-  "secret": "MDA5NjM5N2QtNmM4My00MGRiLWJhNjYtNDI4YzhhZTkzNzJl",
-  "tenantId": "0332bc67-c6be-46a0-876f-e7780160f64f",
-  "redirectUri": "http://localhost:3000/ibm/cloud/appid/callback"
+  "redirectUrl": "http://localhost:3000/ibm/cloud/appid/callback"
 }
