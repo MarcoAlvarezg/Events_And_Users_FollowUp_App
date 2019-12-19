@@ -306,9 +306,15 @@ Esta secuencia la usaremos para tomar las entradas de cada usuario y sus respect
 
 	![](/docs/email.png)
 
-6. Mas abajo, en la opcion de "Login Customization" podemos cambiar ligeramente la pantalla en donde se inicia sesion, se puede modificar el logo que puede ser png o jpg no mayor a 100kb, el color del encabezado, y tenemos una vista previa en web y movil.
+6. En la opcion de "Login Customization" podemos cambiar ligeramente la pantalla en donde se inicia sesion, se puede modificar el logo que puede ser png o jpg no mayor a 100kb, el color del encabezado, y tenemos una vista previa en web y movil.
 
 	![](/docs/login.png)
+
+7. En la pestaña de "Applications" podremos agregar nuestra aplicacion con el boton **Add application** donde nos arrojara una ventana para asignar nombre, tipo, y por si queremos agregar un "Scope". Asiganmos nombre y lo dejaremos como **Regular web application**.
+
+	![](/docs/conection.png)
+
+
 
 ## Ejecucion local
 
