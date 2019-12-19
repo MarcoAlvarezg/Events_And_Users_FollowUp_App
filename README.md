@@ -327,7 +327,7 @@ Primero regresamos a "Authentification Settings" donde ingresamos en el punto 4 
 Ejecuta los siguientes comandos en la terminal, en la carpeta clonada:
 ```bash
 npm install
-npm start
+node app
 ```
 Usa el link http://localhost:3000 para cargar la aplicacion web en el navegador.
 

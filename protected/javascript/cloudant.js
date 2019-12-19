@@ -63,10 +63,10 @@ const cloudantConnection = {
      })
   }
 };
-var x;
-var i;
+var x=0;
+var i=0;
 var h=0;
-var eh;
+var eh=0;
 var n=0;
 (function() {
 
