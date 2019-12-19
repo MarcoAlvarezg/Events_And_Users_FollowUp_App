@@ -317,6 +317,7 @@ Esta secuencia la usaremos para tomar las entradas de cada usuario y sus respect
 8. Eso nos dara unas credenciales que usaremos en nuestra aplicacion. Las cambiaremos en el archivo llamado "**localdev-congfig.json**" 
 
 	![](/docs/credentials.png)
+	
 
 
 
