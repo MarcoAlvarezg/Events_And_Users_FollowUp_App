@@ -294,8 +294,21 @@ Esta secuencia la usaremos para tomar las entradas de cada usuario y sus respect
 ![](/docs/name-create.png)
 
 3. Nos llevara a la pagina principal del Servicio, donde encontraremos de lado derecho la lista de opciones del servicio.
-	Nos dirigiremos a "Manage Authentication" para asignar como crear su cuenta. Se puede elegir entre las siguientes:
+	Nos dirigiremos a "Manage Authentication" y en el apartado de "Identity Providers" para asignar como los usuarios pueden crear su cuenta. Se puede elegir entre las siguientes:
+
 	![](/docs/cuentas.png)
+
+4. En la otra pestaña "Authentification Settings" podemos agregar URL para la redireccion de nuestra aplicacion. Los tokns de seguridad para mantenerse con la sesion iniciada, con el codigo de acceso y el codigo de la cuenta anonima si es que esta activo. 
+
+	![](/docs/token.png)
+
+5. En "Cloud Directory" debajo de "Manage Authentication" encontraremos diversas opciones, seleccionaremos "Workflow Templates" en "Email Verification" se puede cambiar el correo que llega para la verificación del mismo y permitir si los usuarios pueden ingresar a la parte protegida o no si la cuenta ya esta verificada.
+
+	![](/docs/email.png)
+
+6. Mas abajo, en la opcion de "Login Customization" podemos cambiar ligeramente la pantalla en donde se inicia sesion, se puede modificar el logo que puede ser png o jpg no mayor a 100kb, el color del encabezado, y tenemos una vista previa en web y movil.
+
+	![](/docs/login.png)
 
 ## Ejecucion local
 
