@@ -335,7 +335,7 @@ Usa el link http://localhost:3000 para cargar la aplicacion web en el navegador.
 
 ### Deployment
 
-**IMPORTANTE:** Antes de desopegarlo de manera global, quite "http://localhost:3000/*" de la lista de URLs de redirección WEB en "Manage Authentication" en la pestaña "Authentication Settings".
+**IMPORTANTE:** Antes de desplegarlo de manera global, quite "http://localhost:3000/*" de la lista de URLs de redirección WEB en "Manage Authentication" en la pestaña "Authentication Settings".
 
 1. Iniciar sesión en IBM Cloud CLI.
 ``` bash
