@@ -320,7 +320,7 @@ Esta secuencia la usaremos para tomar las entradas de cada usuario y sus respect
 
 
 
-## Ejecucion local
+# Ejecucion local
 
 Primero regresamos a "Authentification Settings" donde ingresamos en el punto 4 de la configuración, para agregar la URL "http://localhost:3000/*
 
@@ -331,9 +331,7 @@ node app
 ```
 Usa el link http://localhost:3000 para cargar la aplicacion web en el navegador.
 
-## Ejecucion en IBM Cloud
-
-### Deployment
+# Ejecucion en IBM Cloud
 
 **IMPORTANTE:** Antes de desplegarlo de manera global, quite "http://localhost:3000/*" de la lista de URLs de redirección WEB en "Manage Authentication" en la pestaña "Authentication Settings".
 
