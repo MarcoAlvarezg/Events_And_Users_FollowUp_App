@@ -100,7 +100,7 @@ En esta sección configuraremos nuestra plataforma de IBM Cloud Functions.
  	12.	Seleccionamos la acción "creare-document", damos click en New Binding, en "name" ponemos de nombre de nuestro paquete binding-for-guestbook y en Cloudant Instance seleccionamos Input Your Own Credentials
  	13.	 Para llenar todos los datos posteriores copiamos y pegamos lo que teníamos en el servicio de Cloudant que seria "Username", "Password", "Host", y llenamos "Database" con el nombre que tiene nuestra base de datos "guestbook" y damos click en Add, luego en Save
  	14.	Para probar que esté funcionando, damos click en change input e ingresamos nuestro siguiente JSON y damos click en Apply y luego en Invoke
-	 ```json
+	 ``` json
 		{
 		"nombre": "John Smith",
 		"correo": "john@smith.com",
@@ -113,7 +113,7 @@ En esta sección configuraremos nuestra plataforma de IBM Cloud Functions.
 Esta secuencia la usaremos para tomar las entradas de cada usuario y sus respectivos comentarios
 	1.	En nuestra tab de functions creamos una acción Node.js 10 y le ponemos el nombre set-read-input, siguiendo el mismo proceso que en la acción anterior
 	2.	Reemplazamos el código que viene, esta acción pasa los parámetros apropiados a nuestra siguiente acción
-		```js
+		``` js
 		function main(params) {
 		 return {
 		  params: {
@@ -131,7 +131,7 @@ Esta secuencia la usaremos para tomar las entradas de cada usuario y sus respect
  	9.	Damos click en Add para añadir una acción más a la secuencia, esta es la que va a dar el formato de los documentos cuando regresen de Cloudant
 	10.	La nombraremos format-entries y posteriormente damos click en Create and add 
 	11.	Damos click en format-entries y reemplazamos el código con:
-		```JS
+		``` js
 		const md5 = require('spark-md5');
 			
 		function main(params) {
@@ -202,7 +202,7 @@ Esta secuencia la usaremos para tomar las entradas de cada usuario y sus respect
  	12.	Seleccionamos la acción "creare-document", damos click en New Binding, en "name" ponemos de nombre de nuestro paquete binding-for-Activities y en Cloudant Instance seleccionamos Input Your Own Credentials
  	13.	 Para llenar todos los datos posteriores copiamos y pegamos lo que teníamos en el servicio de Cloudant que seria "Username", "Password", "Host", y llenamos "Database" con el nombre que tiene nuestra base de datos "teach_adv" y damos click en Add, luego en Save
  	14.	Para probar que esté funcionando, damos click en change input e ingresamos nuestro siguiente JSON y damos click en Apply y luego en Invoke
-	 ```json
+	 ``` json
 		{
 		"user": "john@smith.com",
         "actType": "Taller o Workshop",
@@ -220,7 +220,7 @@ Esta secuencia la usaremos para tomar las entradas de cada usuario y sus respect
 Esta secuencia la usaremos para tomar las entradas de cada usuario y sus respectivos comentarios
 	1.	En nuestra tab de functions creamos una acción Node.js 10 y le ponemos el nombre set-read, siguiendo el mismo proceso que en la acción anterior
 	2.	Reemplazamos el código que viene, esta acción pasa los parámetros apropiados a nuestra siguiente acción
-		```js
+		``` js
 		function main(params) {
 		 return {
 		  params: {
@@ -238,7 +238,7 @@ Esta secuencia la usaremos para tomar las entradas de cada usuario y sus respect
  	9.	Damos click en Add para añadir una acción más a la secuencia, esta es la que va a dar el formato de los documentos cuando regresen de Cloudant
 	10.	La nombraremos format y posteriormente damos click en Create and add 
 	11.	Damos click en format y reemplazamos el código con:
-		```JS
+		``` js
 		const md5 = require('spark-md5');
 			
 		function main(params) {
@@ -325,7 +325,7 @@ Esta secuencia la usaremos para tomar las entradas de cada usuario y sus respect
 Primero regresamos a "Authentification Settings" donde ingresamos en el punto 4 de la configuración, para agregar la URL "http://localhost:3000/*
 
 Ejecuta los siguientes comandos en la terminal, en la carpeta clonada:
-```bash
+``` bash
 npm install
 node app
 ```
@@ -335,25 +335,31 @@ Usa el link http://localhost:3000 para cargar la aplicacion web en el navegador.
 
 ### Deployment
 
-**Important:** Before going live, remove http://localhost:3000/* from the list of web redirect URLs located in "Manage Authentication" -> "Authentication Settings" page in the AppID dashboard.
+**IMPORTANTE:** Antes de desopegarlo de manera global, quite "http://localhost:3000/*" de la lista de URLs de redirección WEB en "Manage Authentication" en la pestaña "Authentication Settings".
 
-1. Login to IBM Cloud.
+1. Iniciar sesión en IBM Cloud CLI.
+``` bash
+  ibmcloud login -a https://api.{{domain}}
+```
+2. Seleccionar una organización y un espacio de Cloud Foundry en el cual tengas acceso de desarrollador:
 
-  `ibmcloud login -a https://api.{{domain}}`
+  Utiliza:
+  ``` bash
+   ibmcloud target --cf
+   ````
+  para seleccionar la org/space interactivamente de Cloud Foundry.
 
-2. Target a Cloud Foundry organization and space in which you have at least Developer role access:
+3. Enlazamos la app a la instancia de App ID:
 
-  Use `ibmcloud target --cf` to target Cloud Foundry org/space interactively.
+	``` bash
+	ibmcloud resource service-alias-create "appIDInstanceName-alias" --instance-name "appIDInstanceName" -s {{space}}
+	```
 
-3. Bind the sample app to the instance of App ID:
-
-  `ibmcloud resource service-alias-create "appIDInstanceName-alias" --instance-name "appIDInstanceName" -s {{space}}`
-  
 4. Add the alias to the manifest.yml file in the sample app.
 
    ```
    applications:
-        - name: [app-instance-name]
+        - name: [el nombre del servicio de app-id]
         memory: 256M
         services:
         - appIDInstanceName-alias
@@ -371,77 +377,10 @@ Usa el link http://localhost:3000 para cargar la aplicacion web en el navegador.
 
 7. Open your IBM Cloud app route in the browser.
 
-## Running in Kubernetes
-
-### Prerequisites
-Before you begin make sure that IBM Cloud CLI, docker and kubectl installed and that you have a running kubernetes cluster.
-You also need an IBM Cloud container registry namespace (see https://cloud.ibm.com/kubernetes/registry/main/start). You can find your registry domain and repository namespace using `ibmcloud cr namespaces`.
-
-### Deployment
-
-**Important:** Before going live, remove http://localhost:3000/* from the list of web redirect URLs located in "Manage Authentication" -> "Authentication Settings" page in the AppID dashboard.
-
-**Note:** Your App ID instance name must consist of lower case alphanumeric characters, '-' or '.', and must start and end with an alphanumeric character. You can visit the App ID dashboard to change your instance name. 
-
-1. Login to IBM Cloud.
-
-    `ibmcloud login -a https://api.{{domain}}`
-  
-2. Run the following command, it will output an export command.
-
-    `ibmcloud cs cluster-config {CLUSTER_NAME}`
-    
-3. Set the KUBECONFIG environment variable. Copy the output from the previous command and paste it in your terminal. The command output looks similar to the following example:
-   
-    `export KUBECONFIG=/Users/$USER/.bluemix/plugins/container-service/clusters/mycluster/kube-config-hou02-mycluster.yml`
-
-4. Bind the instance of App ID to your cluster.
-
-    `ibmcloud cs cluster-service-bind {CLUSTER_NAME} default {APP_ID_INSTANCE_NAME}`
-    
-5. Find your cluster's public endpoint {CLUSTER_ENDPOINT}.
-   
-   Note: If you are using the free version of kubernetes (with only 1 worker node) you can use your node's public IP instead, which you can find using:
-
-    `ibmcloud cs workers {CLUSTER_NAME}`
-
-6. Edit the kube_deployment.yml file. 
-    1. Edit the image field of the deployment section to match your image name. The name of your image should be `{REGISTRY_DOMAIN}/{REPOSITORY_NAMESPACE}/appid-node-sample:{APP_VERSION}`). 
-    2. Edit the Binding name field to match yours. It should be `binding-{APP_ID_INSTANCE_NAME}`.
-    3. Edit redirectUri's value to include your cluster's IP. The value should be `http://{CLUSTER_ENDPOINT}/ibm/cloud/appid/callback`
-    4. Optional: Change the value of metadata.namespace from default to your cluster namespace if you’re using a different namespace.
-
-7. Build your Docker image.
-   
-    `docker build -t {REGISTRY_DOMAIN}/{REPOSITORY_NAMESPACE}/appid-node-sample:{APP_VERSION} .`
-    
-8. Push the image.
-   
-    `docker push {REGISTRY_DOMAIN}/{REPOSITORY_NAMESPACE}/appid-node-sample:{APP_VERSION}`
-   
-    `kubectl apply -f kube_deployment.yml`
-
-9. Now configure the OAuth redirect URL at the App ID dashboard so it will approve redirecting to your cluster. Go to your App ID instance at [IBM Cloud console](https://cloud.ibm.com/resources) and under Manage Authentication->Authentication Settings->Add web redirect URLs add the following URL:
-
-   `https://{CLUSTER_ENDPOINT}:30000/ibm/cloud/appid/callback`
-
-10. You can see your sample running on Kubernetes in IBM Cloud.
-   
-    `open http://{CLUSTER_ENDPOINT}:30000`
-
-## See More
-#### Protecting Node.js Web Applications with IBM Cloud App ID
+## Puedes ver mas en:
+#### Protegiendo applicaciones Web Node.js con IBM Cloud App ID
 https://www.youtube.com/watch?v=6roa1ZOvwtw
 
-## Licencia
-
-Copyright (c) 2019 IBM Corporation
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 [img-ibmcloud-powered]: https://img.shields.io/badge/IBM%20cloud-powered-blue.svg
 [url-ibmcloud-Functions]: https://www.ibm.com/cloud/functions
