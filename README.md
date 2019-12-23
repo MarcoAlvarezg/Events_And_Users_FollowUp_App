@@ -388,11 +388,13 @@ Usa el link http://localhost:3000 para cargar la aplicacion web en el navegador.
 
   ```bash
   ibmcloud app push
-  ````
+  ```
 
  Nos entregara algo como esto:
 
  ![](/docs/Ruta.png)
+
+Cambiamos las rutas que se encuentran en  ./protected/javascript/cloudant.js en las lineas 5 y 6, por: `https://{la ruta que copiamos}/protected/api/idPayload` y `https://{la ruta que copiamos}/protected/api/inst`.
 
 6. Ahora configuraremos la URL de redirection de OAuth en nuestro servicio de AppID en para que pueda aprobar el acceso. Copiamos la routa que nos dio el paso anterio en la parte `routes: *********.mybluemix.net`. 
 
@@ -402,7 +404,7 @@ Nos dirigimos a nuestro servicio de AppID. En **Manage Authentication** despues 
 
    `https://{la ruta que copiamos}/ibm/cloud/appid/callback`
    
-   Ahora podemos encontrar nuestra app en **Cloud Foundre Apps** en la pagina inicial de IBM Cloud: `https://cloud.ibm.com/resources
+   Ahora podemos encontrar nuestra app en **Cloud Foundre Apps** en la pagina inicial de IBM Cloud: `https://cloud.ibm.com/resources`
 
 7. Al entrar veremos un botón que nos permitira visitar la URL de la app.
 

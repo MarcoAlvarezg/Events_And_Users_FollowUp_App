@@ -1,12 +1,7 @@
-/*
- * Web application
- */
 var Url = "<url-de-functions>";
-var UrlU = "http:/localhost:3000//protected/api/idPayload";
-/* "http://localhost:3000/protected/api/idPayload"; */
+var UrlU = "http:/localhost:3000/protected/api/idPayload";
 var UrlI = "http://localhost:3000/protected/api/inst";
-/* "http://localhost:3000/protected/api/inst"; */
-//fs file open
+
 
 
 const USER = {
@@ -18,10 +13,6 @@ const USER = {
     });
   },
 }
-// crear variables de ambiente que almacenas el HOST_BACKEND
-// y la consumes con processs.env.HOST_BACKEND
-// puedes usar IBMcloudenv o el https://www.npmjs.com/package/dotenv
-//retrieve the existing universities entries
 const INST = {
   get(){
     return $.ajax({
@@ -33,7 +24,6 @@ const INST = {
 }
 
 const cloudantConnection = {
-  // retrieve the existing activitis entries
   get() {
     return $.ajax({
       type: 'GET',
@@ -41,7 +31,6 @@ const cloudantConnection = {
       dataType: 'json'
     });
   },
-  // add a single activity entry
   add(user, actType, hours, loc, students, ins, raiting, comment) {
     
     console.log('Sending', user, actType, hours, loc, students, ins, raiting, comment)
@@ -76,7 +65,6 @@ var n=0;
     entriesTemplate = Handlebars.compile($('#entries-template').html());
   }
 
-  // retrieve entries and update the UI
   function loadEntries() {
     USER.get().done(function(rest){
       if(!rest){
@@ -122,8 +110,6 @@ var n=0;
       );
     }
 
-  // intercept the click on the submit button, add the guestbook entry and
-  // reload entries on success
   $(document).on('submit', '#addActivity', function(e) {
     e.preventDefault();
     cloudantConnection.add(
@@ -136,7 +122,6 @@ var n=0;
       $('#rat').val().trim(),
       $('#comment').val().trim()
     ).then(function(result) {
-      // reload entries
       document.getElementById("addActivity").reset();
       alert("Actividad registrada correctamente");
       prepareTemplates();
@@ -148,7 +133,7 @@ var n=0;
   });
 
   $(document).ready(function() {
-    //prepareTemplates();
+    prepareTemplates();
     loadEntries();
   });
 })();

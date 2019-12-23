@@ -1,8 +1,8 @@
 {
-  "clientId": "f637831a-7696-4565-af07-adb1540d8db5",
-  "tenantId": "fc00498e-2f9b-4090-9806-905bd909bf96",
-  "secret": "MzgzYjEyOWQtNTIyYy00OTM2LWIzMzUtZDNiZDJmYmJmMzFj",
-  "oauthServerUrl": "https://us-south.appid.cloud.ibm.com/oauth/v4/fc00498e-2f9b-4090-9806-905bd909bf96",
-  "profilesUrl": "https://us-south.appid.cloud.ibm.com",
+  "clientId": "{{clientId de las credenciales que creamos}}",
+  "tenantId": "{{tenantId de las credenciales que creamos}}",
+  "secret": "{{Secret de las credenciales que creamos}}",
+  "oauthServerUrl": "{{oauthServerUrl de las credenciales que creamos}}",
+  "profilesUrl": "{{profilesUrl de las credenciales que creamos}}",
   "redirectUri": "http://localhost:3000/ibm/cloud/appid/callback"
 }

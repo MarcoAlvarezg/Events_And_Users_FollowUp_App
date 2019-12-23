@@ -1,5 +1,5 @@
 applications:
-- name: PruebaAppID
+- name: {{Nombre de la app}}
   memory: 256M
   services:
-        - appIDInstanceName-alias
+        - {{Nombre Alias de la instancia creada}}
