@@ -336,11 +336,10 @@ Usa el link http://localhost:3000 para cargar la aplicacion web en el navegador.
 **IMPORTANTE:** Antes de desplegarlo de manera global, quite "http://localhost:3000/*" de la lista de URLs de redirección WEB en "Manage Authentication" en la pestaña "Authentication Settings".
 
 1. Iniciar sesión en IBM Cloud CLI.
-``` bash
-  ibmcloud login 
-```
+	``` bash
+	ibmcloud login 
+	```
 
-	<br>
 	1. Elegimos la Region, que sea la mas cercana, como us-south o us-east.
 
 	![](/docs/Region.png)
