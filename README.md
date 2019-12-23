@@ -346,7 +346,7 @@ Usa el link http://localhost:3000 para cargar la aplicacion web en el navegador.
 
 2. Seleccionar una organización y un espacio de Cloud Foundry en el cual tengas acceso de desarrollador:
 	<br>Utiliza:<br>
-		``` bash
+		```bash
 		ibmcloud target --cf
 		```
 
@@ -358,7 +358,7 @@ Usa el link http://localhost:3000 para cargar la aplicacion web en el navegador.
 		```
 
 	para que nos muestre los que tenemos disponibles y seleccionamos uno con:<br>
-		``` bash
+		```bash
 		ibmcloud target -g {{el nombre del recurso}}
 		```
 	
