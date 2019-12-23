@@ -345,11 +345,11 @@ Usa el link http://localhost:3000 para cargar la aplicacion web en el navegador.
 	![](/docs/Region.png)
 
 2. Seleccionar una organización y un espacio de Cloud Foundry en el cual tengas acceso de desarrollador:
-
 	Utiliza:
 		``` bash
 		ibmcloud target --cf
 		```
+
 	para seleccionar la org/space interactivamente de Cloud Foundry.
 
 	1. Revisar que tengamos tambien seleccionado el grupo de recursos, si no, podemos correr:
