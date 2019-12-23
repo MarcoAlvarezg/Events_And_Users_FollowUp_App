@@ -367,30 +367,46 @@ Usa el link http://localhost:3000 para cargar la aplicacion web en el navegador.
 3. Enlazamos la app a la instancia de App ID:
 
 	``` bash
-	ibmcloud resource service-alias-create "appIDInstanceName-alias" --instance-name "appIDInstanceName" -s {{space}}
+	ibmcloud resource service-alias-create "{{El nombre Alias de la instancia}}" --instance-name "{{El nombre del servicio ya creada en IBM Cloud}}" -s {{space}}
 	```
 
-4. Add the alias to the manifest.yml file in the sample app.
+	Nos creara una instancia de Cloud Foundry conectada a nuestro servicio de AppID.
+
+	![](/docs/Servicio.png)
+
+4. Cambiaremos el nombre del Alias de la instancia en el archivo manifest.yml
 
    ```
    applications:
-        - name: [el nombre del servicio de app-id]
+        - name: [el nombre de la app]
         memory: 256M
         services:
-        - appIDInstanceName-alias
+        - {{El nombre Alias de la instancia}}
    ```
 
-5. Deploy the sample application to IBM Cloud. From the app's folder do:
+5.  Desplegamos la aplicacion directamente en IBM Cloud, desde la carpeta de la app ejecutamos:
 
-  `ibmcloud app push`
-  
-6. Now configure the OAuth redirect URL at the App ID dashboard so it will approve redirecting to your cluster. Go to your App ID instance at [IBM Cloud console](https://cloud.ibm.com/resources) and under Manage Authentication->Authentication Settings->Add web redirect URLs add the following URL:
+  ```bash
+  ibmcloud app push
+  ````
 
-   `https://{App Domain}/ibm/cloud/appid/callback`
+ Nos entregara algo como esto:
+
+ ![](/docs/Ruta.png)
+
+6. Ahora configuraremos la URL de redirection de OAuth en nuestro servicio de AppID en para que pueda aprobar el acceso. Copiamos la routa que nos dio el paso anterio en la parte `routes: *********.mybluemix.net`. 
+
+Nos dirigimos a nuestro servicio de AppID. En **Manage Authentication** despues en **Authenticaiton Settings** veremos un boton que dice de + que es que nos permitira agregar una URL nueva, que sera la siguiente:
+
+![](/docs/RutaNueva.png)
+
+   `https://{la ruta que copiamos}/ibm/cloud/appid/callback`
    
-   You find your app's domain by visiting Cloud Foundry Apps at the IBM Cloud dashboard: https://cloud.ibm.com/resources.
+   Ahora podemos encontrar nuestra app en **Cloud Foundre Apps** en la pagina inicial de IBM Cloud: `https://cloud.ibm.com/resources
 
-7. Open your IBM Cloud app route in the browser.
+7. Al entrar veremos un botón que nos permitira visitar la URL de la app.
+
+![](/docs/visita.png)
 
 ## Puedes ver mas en:
 #### Protegiendo applicaciones Web Node.js con IBM Cloud App ID
