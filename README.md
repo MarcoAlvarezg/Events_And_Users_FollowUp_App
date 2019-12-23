@@ -358,11 +358,11 @@ Usa el link http://localhost:3000 para cargar la aplicacion web en el navegador.
 		ibmcloud resource groups
 		```
 
-	para que nos muestre los que tenemos disponibles y seleccionamos uno con:
+		para que nos muestre los que tenemos disponibles y seleccionamos uno con:
 
-	``` bash
-	ibmcloud target -g {{el nombre del recurso}}
-	```
+		``` bash
+		ibmcloud target -g {{el nombre del recurso}}
+		```
 	
 3. Enlazamos la app a la instancia de App ID:
 
