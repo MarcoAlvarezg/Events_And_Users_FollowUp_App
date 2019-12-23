@@ -339,8 +339,10 @@ Usa el link http://localhost:3000 para cargar la aplicacion web en el navegador.
 ``` bash
   ibmcloud login 
 ```
-<br>
-	1. Elegimos la Region, que sea la mas cercana, como us-south o us-east
+
+	<br>
+	1. Elegimos la Region, que sea la mas cercana, como us-south o us-east.
+
 	![](/docs/Region.png)
 
 2. Seleccionar una organización y un espacio de Cloud Foundry en el cual tengas acceso de desarrollador:
