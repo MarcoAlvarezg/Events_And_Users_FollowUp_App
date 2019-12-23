@@ -339,6 +339,7 @@ Usa el link http://localhost:3000 para cargar la aplicacion web en el navegador.
 ``` bash
   ibmcloud login 
 ```
+
 	1. Elegimos la Region, que sea la mas cercana, como us-south o us-east
 	![](/docs/Region.png)
 
