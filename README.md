@@ -347,18 +347,21 @@ Usa el link http://localhost:3000 para cargar la aplicacion web en el navegador.
 2. Seleccionar una organización y un espacio de Cloud Foundry en el cual tengas acceso de desarrollador:
 
   Utiliza:
-  ``` bash
-   ibmcloud target --cf
-   ```
-  para seleccionar la org/space interactivamente de Cloud Foundry.
+	``` bash
+	ibmcloud target --cf
+	```
+	para seleccionar la org/space interactivamente de Cloud Foundry.
+
 	1. Revisar que tengamos tambien seleccionado el grupo de recursos, si no, podemos correr:
 	``` bash
 	ibmcloud resource groups
 	```
+
 	para que nos muestre los que tenemos disponibles y seleccionamos uno con:
 	``` bash
 	ibmcloud target -g {{el nombre del recurso}}
 	```
+	
 3. Enlazamos la app a la instancia de App ID:
 
 	``` bash
