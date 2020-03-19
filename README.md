@@ -20,29 +20,38 @@ Para mayor informacion: [![App-id][img-cloud-appid]][url-ibmcloud-appid]
 Es una base de datos completamente administrable para aplicaciones multinube hibrida con una completa compatibilidad de API.
 
 Para mayor informacion: [![Cloudant][img-cloud-cloudant]][url-ibmcloud-cloudant]
-
 ## Prework:
 * Cuenta de [IBM Cloud][url-IBMCLOUD]
-* Instalar [CLI de IBM Cloud][url-CLI-IBMCLOUD] 
+* Instalar [CLI de IBM Cloud][url-CLI-IBMCLOUD] (para descargar la versión “STANDALONE” [**aquí**](https://cloud.ibm.com/docs/cli?topic=cloud-cli-install-ibmcloud-cli))
 * Cuenta en [GitHub][url-github-join]
 * Instalar [CLI de GitHub][url-github-cli] o instalar [GitHub Desktop][url-githubdesktop]
-* [NodeJS][url-node]
+* Instalar [NodeJS][url-node]
 * Utilizar safari, chrome, firefox, edge
 
-### Cupones para Estudiantes y profesores
- 
+## Cupones para profesores y estudiantes:
 
-	1.	Acceder al HUB para Software para uso académico. Y navegar hasta la parte de abajo de la pagina https://onthehub.com/ibm/?utm_sourc=ibm-ai-productpage&utm_medium=onthehubproductpage&utm_campaign=IBM 
-	2.	Buscar el WebStore del instituto/escuela al que perteneces. 
-	3.	En caso de no contar con WebStore, acceder al portal de IBM Academic Initiative y seleccionar la opción de <Students> 
-	4.	Seleccionar <Add to Cart> para IBM Bluemix – 6 Month Trial. 
-	5.	Realizar el registro correspondiente utilizando la cuenta de correo académica 
- 
-### Cargar créditos en IBM Cloud
-	1.	Ingresamos a nuestro panel de control de IBM Cloud (cloud.ibm.com)
-	2.	Una vez que tengamos el código nos vamos a Gestionar>Facturación y Uso>Facturación
-	3.	Buscamos “Códigos de características (Promocionales)”
+* Acceder al portal de [IBM Academic Initiative][url-academic] y seleccionar la opción "Register now" si aun no tienes cuenta.
+* Realizar el registro correspondiente utilizando la cuenta de correo académica y confirma tu cuenta.
+* Despues de confirmar tu cuenta, y con la sesion iniciada en IBM Academic Initiative, en la parte de "Most Popular Topics covered", encontraremos **IBM Cloud** y damos click en "Learn more".
+* Bajamos de la pagina hasta encontrar "Software". Le damos click, nos dara un apartado que se llama "Request Feature Code".
+* Nos dara nuestro codigo. Lo copiamos y lo llevamos a **IBM Cloud**.
 
+## Cargar créditos en IBM Cloud:
+
+* En la parte superior derecha, buscaremos la parte de "MANAGE"/"GESTIONAR", nos desplegara una lista y seleccionaremos "Account"/"Cuenta".
+* De lado izquierdo, tendremos una opción "Account settings"/"Configuracion de cuenta".
+* Bajamos un poco hasta encontrar "Subscription and feature codes"/"Codigos de suscripción y carateristicas".
+* Da click en "Apply code"/"Aplicar codigo".
+* Ingresamos el codigo y click en "Apply"/"Aplicar".
+
+[url-academic]: https://my15.digitalexperience.ibm.com/b73a5759-c6a6-4033-ab6b-d9d4f9a6d65b/dxsites/151914d1-03d2-48fe-97d9-d21166848e65/home/
+[url-onthehub]: https://onthehub.com/ibm/?utm_sourc=ibm-ai-productpage&utm_medium=onthehubproductpage&utm_campaign=IBM
+[url-IBMCLOUD]: https://cloud.ibm.com/registration
+[url-CLI-IBMCLOUD]: https://cloud.ibm.com/docs/cli/reference/ibmcloud?topic=cloud-cli-install-ibmcloud-cli
+[url-github-join]: https://github.com/join
+[url-github-cli]: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+[url-githubdesktop]: https://desktop.github.com/
+[url-node]: https://nodejs.org/es/download/
 
 ## Contenido
 
