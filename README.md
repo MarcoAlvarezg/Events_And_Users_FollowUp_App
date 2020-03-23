@@ -1,6 +1,6 @@
 
 ## IBM Developer Advocates Team
-[![IBM Cloud powered][img-ibmcloud-powered]][url-ibmcloud]
+[![IBM Cloud powered][img-ibmcloud-powered]][url-ibmcloudP]
 
 # Functions de IBM Cloud 
 [Functions](#Functions)
@@ -435,7 +435,7 @@ https://www.youtube.com/watch?v=6roa1ZOvwtw
 [img-cloud-cloudant]: https://img.shields.io/badge/IBM%20cloud-Cloudant-red.svg
 [url-ibmcloud-appid]: https://www.ibm.com/cloud/app-id
 [url-ibmcloud-cloudant]: https://www.ibm.com/cloud/cloudant
-[url-ibmcloud]: https://www.ibm.com/cloud/
+[url-ibmcloudP]: https://www.ibm.com/cloud/
 [url-githubserverless]: https://github.com/ibmdevelopermx/Serverless_Cloudant
 [url-IBMCLOUD]: https://cloud.ibm.com/registration
 [url-CLI-IBMCLOUD]: https://cloud.ibm.com/docs/cli/reference/ibmcloud?topic=cloud-cli-install-ibmcloud-cli
